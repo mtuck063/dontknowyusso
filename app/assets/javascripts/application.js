@@ -14,3 +14,25 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+$(document).ready(function(){ 
+
+	start(); 
+	$("div#thebasis-container-1 img").hide();
+	$("#doyouknow").delay(1500).fadeOut(500);
+	$("div#thebasis-container-1 img").delay(2000).fadeIn(1500);
+
+});
+
+
+
+window.onresize = function() {
+	start(); 
+};
+
+function start(){
+
+
+}

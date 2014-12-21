@@ -1,0 +1,19 @@
+div#thebasis-container-1{
+	background-color: #000;
+	height: 100vh;
+	line-height: 100vh;
+
+	img{
+		width: 80vw;
+	    position: absolute;
+	    margin: auto;
+	    top: 0;left: 0;right: 0;bottom: 0;
+	}
+
+	#doyouknow{
+		color: #fff;
+		font: 300 4em 'Open Sans', sans-serif;
+		text-align: center;
+		line-height: 100vh;
+	}
+}
