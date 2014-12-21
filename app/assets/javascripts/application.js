@@ -21,8 +21,11 @@ $(document).ready(function(){
 
 	start(); 
 	$("div#thebasis-container-1 img").hide();
-	$("#doyouknow").delay(1500).fadeOut(500);
-	$("div#thebasis-container-1 img").delay(2000).fadeIn(1500);
+	$("#doyouknow").delay(2000).fadeOut(500);
+	$("div#thebasis-container-1 img").delay(2500).fadeIn(1500);
+	//$("div#thebasis-container-1 img").delay(2000).animate({opacity: [0.7, "linear"]}, 1500);
+
+
 
 });
 
