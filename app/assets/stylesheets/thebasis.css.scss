@@ -1,9 +1,6 @@
 div#thebasis-container-1{
 	background-color: #000;
-	background-image: image-url('yusso-solo.JPG');
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
+	background-image: image-url('eben-v2.jpg');
 	background-size: cover;
 	height: 100vh;
 	line-height: 100vh;
@@ -13,19 +10,38 @@ div#thebasis-container-1{
 	    position: absolute;
 	    margin: 0 auto;
 	    top: 2vh;left: 0;right: 0;bottom: 0;
+	    z-index: 2;
 	}
 
 	#doyouknow{
 		color: #fff;
 		font: 300 4em 'Open Sans', sans-serif;
 		text-align: center;
+		z-index: 10;
+		position: absolute;
+		width: 100vw;
 	}
 }
 
 @media screen and (max-width: 450px){
 
-	div#thebasis-container-1 > #doyouknow{
+	div#thebasis-container-1{
+
+		img {
+			width: 90vw;
+			top: 10vh;
+		}
+
+		#doyouknow{
 		font-size: 3em;
+		}
 	}
 
+
+}
+
+video#bgvideo {
+	position: fixed;
+	z-index: 1;
+	height: 100vh;
 }
