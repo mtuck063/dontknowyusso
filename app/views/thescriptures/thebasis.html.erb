@@ -1,13 +1,35 @@
-<div id="thebasis-container-1">
-
+<div id="thebasis-container-1" class="animsition">
 
 	<%= video_tag ['yusso-face-distortion.mp4','yusso-face-distortion.webm','yusso-face-distortion.ogv'], 
 						id: 'bgvideo', autoplay: true , loop: true, poster: 'eben.jpg' %>
 
 	<div id="doyouknow">Do you know?</div>
-
 	<%= image_tag 'yussowhite.svg', alt: 'Yusso Logo', id: 'yussologo-1' %>
 
+	<div class="slide-up-effect not-mobile-friendly" id="menutext">
+		<%= link_to '#', class: 'slider animsition-link' do %>
+			<span data-hover="#theART">#theART</span>
+		<%end%>
+		<%= link_to theartist_path, class: 'slider animsition-link' do %>
+			<span data-hover="#theARTIST">#theARTIST</span>
+		<%end%>
+	</div>
 
+	<div class="slide-up-effect not-mobile-friendly" id="footerlinks">
+		<%= link_to 'https://soundcloud.com/dontknowyusso', target: '_blank', class: 'slider' do %>
+			<span data-hover="SoundCloud">SoundCloud</span>
+		<%end%>
+		<%= link_to 'https://www.facebook.com/dontknowyusso', target: '_blank', class: 'slider' do %>
+			<span data-hover="Facebook">Facebook</span>
+		<%end%>
+		<%= link_to 'http://instagram.com/dontknowyusso', target: '_blank', class: 'slider' do %>
+			<span data-hover="Instagram">Instagram</span>
+		<%end%>
+		<%= link_to 'https://twitter.com/dontknowyusso', target: '_blank', class: 'slider' do %>
+			<span data-hover="Twitter">Twitter</span>
+		<%end%>
+	</div>
 
 </div>
+
+

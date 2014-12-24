@@ -29,14 +29,18 @@ $(document).ready(function(){
 		$("#doyouknow").hide();
 		$("#doyouknow").fadeIn(1500);
 		$("#doyouknow").delay(1500).fadeOut(500);
-		$("div#thebasis-container-1 img").delay(6000).fadeIn(1500);
+		$("div#thebasis-container-1 img").delay(5000).fadeIn(1500);
 	}else{
-		document.getElementById('bgvideo').style.display = 'none';
 		$("div#thebasis-container-1 img").hide();
 		$("#doyouknow").hide();
 		$("#doyouknow").delay(1000).fadeIn(1500);
 		$("div#thebasis-container-1 img").css({ 'top' : '10vh' });
 		$("div#thebasis-container-1 img").delay(1000).fadeIn(1500);
+	}
+
+	if(window.innerWidth < 760){
+		$('video#bgvideo').css({ 'display' : 'none'});
+		$('.not-mobile-friendly').css({ 'display' : 'none'});
 	}
 
 	//$("div#thebasis-container-1 img").delay(2000).animate({opacity: [0.7, "linear"]}, 1500);
@@ -54,28 +58,30 @@ function start(){
 
 	if(window.innerWidth > 450){
 		$("#doyouknow").fadeOut(500);
-		document.getElementById('bgvideo').style.display = 'block';
-		$("div#thebasis-container-1 img").css({ 'top' : '2vh' });
+		$("div#thebasis-container-1 img").css({ 'top' : '1vh' });
 
 	}else{
 		$("#doyouknow").fadeIn(500);
 		$("div#thebasis-container-1 img").css({ 'top' : '10vh' });
-		document.getElementById('bgvideo').style.display = 'none';
+	}
+
+	if(window.innerWidth > 760){
+		$('video#bgvideo').css({ 'display' : 'block'});
+	}else{
+		$('video#bgvideo').css({ 'display' : 'none'});
 	}
 	
 }
 
 function scaleVideo() {
 
-	if(window.innerWidth > 480 ){
+	if(window.innerWidth > 760 ){
 		var windowHeight = $(window).height();
 		var windowWidth = $(window).width();
-		var nWidth = $('video#bgvideo')[0].videoWidth;
-		var nHeight = $('video#bgvideo')[0].videoHeight;
+		var nWidth = 1920;
+		var nHeight = 1080;
 
-		if( (windowWidth/windowHeight) > (nWidth/nHeight) ){
-
-			console.log('this should print');
+		if( (windowWidth/windowHeight) > (1920/1080) ){
 
 			if( (windowHeight / nHeight) > (windowWidth / nWidth) ){
 				var scale = (windowHeight / nHeight);
@@ -85,7 +91,11 @@ function scaleVideo() {
 
 			$('video#bgvideo').height( nHeight * scale );
 			$('video#bgvideo').width( nWidth * scale );
+		}else{
+			$('video#bgvideo').height('100vh');
+			$('video#bgvideo').width( 'auto' );
 		}
 	}
 }
+
 
