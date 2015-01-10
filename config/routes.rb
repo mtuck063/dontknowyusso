@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "thescriptures#thebasis"
 
   get "/theARTIST" => "thescriptures#theartist", as: 'theartist'
+  get "/theART" => "thescriptures#theart", as: 'theart'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

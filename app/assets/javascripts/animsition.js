@@ -47,7 +47,87 @@ $(document).ready(function() {
     overlayClass          :   'animsition-overlay-slide',
     overlayParentElement  :   'body'
   });
+
+  $("#theartist-container-2.animsition").animsition({
   
+    inClass               :   'fade-in-left-lg',
+    outClass              :   'fade-out-left-lg',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link', 
+    loading               :    true,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+
+    $("#theart-container-1.animsition").animsition({
+  
+    inClass               :   'fade-in-left-lg',
+    outClass              :   'fade-out-left-lg',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link', 
+    loading               :    true,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+
+    $("#theart-container-2.animsition").animsition({
+  
+    inClass               :   'fade-in-left-lg',
+    outClass              :   'fade-out-left-lg',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link', 
+    loading               :    true,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+
+    $("#theart-container-3.animsition").animsition({
+  
+    inClass               :   'fade-in-left-lg',
+    outClass              :   'fade-out-left-lg',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link', 
+    loading               :    true,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+
 });
 
 (function($) {
@@ -77,7 +157,6 @@ $(document).ready(function() {
             return str;
           };
         }
-        console.log("Animsition does not support this browser.");
         return methods.destroy.call(this);
       }
       var overlayMode = methods.optionCheck.call(this, options);

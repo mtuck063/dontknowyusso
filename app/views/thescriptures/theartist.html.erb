@@ -1,3 +1,21 @@
 <div id="theartist-container-1" class="animsition">
-	
+	<div id="scroll">Scroll</div>
+	<svg class="arrows">
+		<path class="a1" d="M0 0 L30 32 L60 0"></path>
+		<path class="a2" d="M0 20 L30 52 L60 20"></path>
+		<path class="a3" d="M0 40 L30 72 L60 40"></path>
+	</svg>
 </div>
+
+	<div class="slide-up-effect not-mobile-friendly" id="menutext">
+		<%= link_to root_path, class: 'slider animsition-link' do %>
+			<span data-hover="home">HOME</span>
+		<%end%>
+		<%= link_to theart_path, class: 'slider animsition-link' do %>
+			<span data-hover="THEart">theART</span>
+		<%end%>
+	</div>
+
+
+
+<div id="theartist-container-2" class="animsition"></div>

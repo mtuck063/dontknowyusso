@@ -1,0 +1,135 @@
+div#theart-container-1{
+	background-image: image-url('blue-bgv2.jpg');
+	background-size: cover;
+	height: 100vh;
+	background-attachment: fixed;
+	
+}
+
+div#theart-container-2{
+	background-image: image-url('yussoandking.jpg');
+	background-size: cover;
+	height: 100vh;
+	background-attachment: fixed;
+}
+
+div#theart-container-3{
+	background-image: image-url('ebenperforming.jpg');
+	background-size: cover;
+	height: 100vh;
+	background-attachment: fixed;
+
+}
+
+div#mixtapes{
+	width: 90vw;
+	margin: 0 auto;
+	display: block;
+}
+
+div.container{
+	overflow: hidden;
+	height: 35vmax;
+	width: 35vmax;
+}
+
+div.mixtape-container{
+	background: -webkit-linear-gradient(-45deg, #f3cf3f 0%,#f33f58 100%);
+	background: linear-gradient(-45deg, #f3cf3f 0%,#f33f58 100%);
+	display: inline-block;
+	height: inherit;
+	width: inherit;
+	position: relative;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+	-webkit-transition: -webkit-transform 0.4s;
+	transition: transform 0.4s;
+
+	&:hover{
+		cursor: pointer;
+		-webkit-transform: scale3d(1.1,1.1,1.1);
+		transform: scale3d(1.1,1.1,1.1);
+	}
+}
+
+div.mixtape-container::before{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	content: '';
+	opacity: 0;
+	z-index: 1;
+	-webkit-transform: rotate3d(0,0,1,45deg) scale3d(1,0,1);
+	transform: rotate3d(0,0,1,45deg) scale3d(1,0,1);
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+	-webkit-transition: opacity 0.4s, -webkit-transform 0.4s;
+	transition: opacity 0.4s, transform 0.4s;
+}
+
+div.mixtape-container:hover::before{
+	opacity: 1;
+	-webkit-transform: rotate3d(0,0,1,45deg) scale3d(0.85,0.85,0.85);
+	transform: rotate3d(0,0,1,45deg) scale3d(0.85,0.85,0.85);
+}
+
+img#crookidbass, img#sandboxpride{
+	display: inline-block;
+	width: inherit;
+	height: inherit;
+	opacity: 0.8;
+}
+
+iframe.soundcloud{
+	margin: 0 auto;
+	display: block;
+	max-height: 60vh;
+}
+
+span.title, span.thetitle{
+	display: block;
+	color: #fff;
+	font: 300 3em 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	width: 100vw;
+	text-align: center;
+	letter-spacing: 0.15em;
+}
+
+#mixtapes a{
+	width:inherit;
+	height: inherit;
+	display: block;
+	position: relative;
+}
+
+div#fp-nav{
+	height: 100px;
+	width:20px;
+	position: fixed;
+	top:48vh;
+	right: 5vw;
+}
+div#fp-nav ul li a{
+	width: 10px;
+	height: 10px;
+	display: block;
+	margin: 10px 5px;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	text-decoration: none;
+}
+
+li, ul{
+	list-style-type: none;
+	display: block;
+	text-decoration: none;
+}
+
+
+
+

@@ -1,19 +1,39 @@
 <div id="thebasis-container-1" class="animsition">
 
-	<%= video_tag ['yusso-face-distortion.mp4','yusso-face-distortion.webm','yusso-face-distortion.ogv'], 
-						id: 'bgvideo', autoplay: true , loop: true, poster: 'eben.jpg' %>
+	<%= video_tag ['nominepatris.mp4','nominepatris.webm','nominepatris.ogv'], 
+						id: 'bgvideo', autoplay: true , loop: true, muted: true %>
 
 	<div id="doyouknow">Do you know?</div>
 	<%= image_tag 'yussowhite.svg', alt: 'Yusso Logo', id: 'yussologo-1' %>
 
 	<div class="slide-up-effect not-mobile-friendly" id="menutext">
-		<%= link_to '#', class: 'slider animsition-link' do %>
-			<span data-hover="#theART">#theART</span>
+		<%= link_to theart_path, class: 'slider animsition-link' do %>
+			<span data-hover="THEart">theART</span>
 		<%end%>
 		<%= link_to theartist_path, class: 'slider animsition-link' do %>
-			<span data-hover="#theARTIST">#theARTIST</span>
+			<span data-hover="THEartist">theARTIST</span>
 		<%end%>
 	</div>
+
+	<div id="caption">
+		Born in the wild.<br>
+		Raised by aliens.<br>
+		Sent to school with humans...
+	</div>
+
+	<div id="menutext2" class="mobile-friendly" >
+		<%= link_to "theART", theart_path, class: 'mobile-menu' %>
+		<%= link_to "theARTIST", theartist_path, class: 'mobile-menu' %>
+	</div>
+	
+	<div id="watchvid" class="not-mobile-friendly">
+		Watch Video
+	</div>
+
+	<%= video_tag ['makeamove.mp4','makeamove.webm','makeamove.ogv', ], 
+						id: 'featuredvid', autoplay: false , loop: false, muted: false, controls: true %>
+
+	<div class="close">CLOSE</div>
 
 	<div class="slide-up-effect not-mobile-friendly" id="footerlinks">
 		<%= link_to 'https://soundcloud.com/dontknowyusso', target: '_blank', class: 'slider' do %>
@@ -31,5 +51,6 @@
 	</div>
 
 </div>
+
 
 

@@ -1,0 +1,73 @@
+<div id="theart-container-1" class="animsition">
+
+	<div class="slide-up-effect not-mobile-friendly" id="menutext">
+		<%= link_to root_path, class: 'slider animsition-link' do %>
+			<span data-hover="home">HOME</span>
+		<%end%>
+		<%= link_to theartist_path, class: 'slider animsition-link' do %>
+			<span data-hover="THEartist">theARTIST</span>
+		<%end%>
+	</div>
+
+	<span class="thetitle">the art</span>
+
+	<div id="mixtapes">
+		<div class="container" style="margin-left:6vw; margin-right: 3.5vw;">
+			<div class="mixtape-container">
+				<%= link_to(image_tag("crookidbass.jpg", alt: "Crookidbass Mixtape", id: "crookidbass"), 
+																				theart_path+"#theart-container-2")  %>
+			</div>
+		</div>
+		<div class="container" style="margin-left:3.5vw; margin-right: 6vw;">
+			<div class="mixtape-container">
+				<%= link_to(image_tag("sandboxpride.jpg", alt: "Sandbox Pride Mixtape", id: "sandboxpride"), 
+																				theart_path+"#theart-container-3") %>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<div id="theart-container-2" class="animsition">
+
+	<span class="title">Crookid Bass</span>
+
+	<iframe class="soundcloud" width="90%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/55719894&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+
+</div>
+
+<div id="theart-container-3" class="animsition">
+
+	<span class="title">Sandbox Pride</span>
+
+	<iframe class="soundcloud" width="90%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/70939929&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+	</div>
+
+<div class="slide-up-effect not-mobile-friendly" id="footerlinks">
+	<%= link_to 'https://soundcloud.com/dontknowyusso', target: '_blank', class: 'slider' do %>
+		<span data-hover="SoundCloud">SoundCloud</span>
+	<%end%>
+	<%= link_to 'https://www.facebook.com/dontknowyusso', target: '_blank', class: 'slider' do %>
+		<span data-hover="Facebook">Facebook</span>
+	<%end%>
+	<%= link_to 'http://instagram.com/dontknowyusso', target: '_blank', class: 'slider' do %>
+		<span data-hover="Instagram">Instagram</span>
+	<%end%>
+	<%= link_to 'https://twitter.com/dontknowyusso', target: '_blank', class: 'slider' do %>
+		<span data-hover="Twitter">Twitter</span>
+	<%end%>
+</div>
+
+<div id="fp-nav">
+	<ul>
+		<li>
+			<%= link_to "", '#theart-container-1' , id: 'one' %>
+		</li>
+		<li>
+			<%= link_to "", '#theart-container-2' , id: 'two' %>
+		</li>
+		<li>
+			<%= link_to "", '#theart-container-3' , id: 'three' %>
+		</li>
+	</ul>
+</div>
+

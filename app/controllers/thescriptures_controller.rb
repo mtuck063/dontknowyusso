@@ -6,4 +6,7 @@ class ThescripturesController < ApplicationController
 	def theartist
 	end
 
+	def theart
+	end
+
 end

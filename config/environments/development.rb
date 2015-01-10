@@ -38,4 +38,10 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  Instagram.configure do |config|
+    config.client_id = ENV['IG_CLIENT_ID']
+    config.client_secret = ENV['IG_CLIENT_SECRET']
+  end
+  
 end
