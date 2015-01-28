@@ -21,8 +21,8 @@ $(document).ready(function(){
 
 	start(); 
 	scaleVideo();
-	var url = "https://api.instagram.com/v1/users/478280771/media/recent/?client_id=1770a52803f4453f95898d9db37464bf";
-	endlessScrolling(url);
+	var instagram_url = "https://api.instagram.com/v1/users/478280771/media/recent/?client_id=1770a52803f4453f95898d9db37464bf";
+	endlessIGScrolling(instagram_url);
 	var hash = window.location.hash;
 	var placeinwindow;
 	window.location.hash = "";
@@ -115,15 +115,6 @@ $(document).ready(function(){
 
 	});
 
-	$("#menutext2").css({ 'top' : (($(window).height() - $("div#caption").height())/2) + $("div#caption").height() + 15 });
-	$("#mixtapes").css({ 'padding-top' : ((($(window).height() - $("#mixtapes").height())/2) - $(".thetitle").height())/2 });
-	$(".soundcloud").css({ 'padding-top' : ((($(window).height() - $(".soundcloud").height())/2) - $(".title").height())/2 });
-	$(".thetitle").css({ 'padding-top' : ((($(window).height() - $("#mixtapes").height())/2) - $(".thetitle").height())/2 });
-	$(".title").css({ 'padding-top' : ((($(window).height() - $(".soundcloud").height())/2) - $(".title").height())/2 });
-	$("div#caption").css({ 'top' : (($(window).height() - $("div#caption").height())/2) });
-	$("#featuredvid, .close").css({ 'top' : (($(window).height() - $("#featuredvid").height())/2) });
-	$("#featuredvid, .close").css({ 'left' : (($(window).width() - $("#featuredvid").width())/2) });
-	$("div#watchvid").css({ 'top' : (($(window).height() - $("div#caption").height())/2) + $("div#caption").height() + 15 });
 
 });
 
@@ -164,6 +155,16 @@ function start(){
 
 	}
 	
+	$("#menutext2").css({ 'top' : (($(window).height() - $("div#caption").height())/2) + $("div#caption").height() + 15 });
+	$("#mixtapes").css({ 'padding-top' : ((($(window).height() - $("#mixtapes").height())/2) - $(".thetitle").height())/2 });
+	$(".soundcloud").css({ 'padding-top' : ((($(window).height() - $(".soundcloud").height())/2) - $(".title").height())/2 });
+	$(".thetitle").css({ 'padding-top' : ((($(window).height() - $("#mixtapes").height())/2) - $(".thetitle").height())/2 });
+	$(".title").css({ 'padding-top' : ((($(window).height() - $(".soundcloud").height())/2) - $(".title").height())/2 });
+	$("div#caption").css({ 'top' : (($(window).height() - $("div#caption").height())/2) });
+	$("#featuredvid, .close").css({ 'top' : (($(window).height() - $("#featuredvid").height())/2) });
+	$("#featuredvid, .close").css({ 'left' : (($(window).width() - $("#featuredvid").width())/2) });
+	$("div#watchvid").css({ 'top' : (($(window).height() - $("div#caption").height())/2) + $("div#caption").height() + 15 });
+
 }
 
 function scaleVideo() {
@@ -191,7 +192,7 @@ function scaleVideo() {
 	}
 }
 
-function endlessScrolling(url){
+function endlessIGScrolling(url){
 	var fatesabitch = true;
 	$.ajax({
         url: url,
@@ -201,16 +202,15 @@ function endlessScrolling(url){
         	url = data.pagination.next_url;
         	for(var i = 0; i < data.data.length; i++){
         		if( typeof data.data[i].videos == "undefined" ){
-        			$("#theartist-container-2").append("<img class='instagram-photos' src='"
+        			$("#followyusso-container-2").append("<img class='instagram-photos' src='"
         				+ data.data[i].images.standard_resolution.url + "'>");
-        			$("#theartist-container-2").append("<div class='instagram-caption'>"+ data.data[i].caption.text +"</div>");
+        			$("#followyusso-container-2").append("<div class='instagram-caption'>"+ data.data[i].caption.text +"</div>");
         		}
         	}
 
-
 		   	$(window).scroll( function(){ 
 				if($(window).scrollTop() >= $(document).height() - $(window).height() - 500 && fatesabitch){
-					endlessScrolling(url);
+					endlessIGScrolling(url);
 					fatesabitch = false;
 				}else if($(window).scrollTop() >=  $(window).height()){
 					$("#scroll").fadeOut(1500);
@@ -220,6 +220,8 @@ function endlessScrolling(url){
 		}
 	});	
 }
+
+
 
 
 

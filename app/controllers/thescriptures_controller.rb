@@ -9,4 +9,13 @@ class ThescripturesController < ApplicationController
 	def theart
 	end
 
+	def contact
+	end
+
+	def shows
+	end
+
+	def followyusso
+	end
+
 end

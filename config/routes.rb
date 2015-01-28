@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   get "/theARTIST" => "thescriptures#theartist", as: 'theartist'
   get "/theART" => "thescriptures#theart", as: 'theart'
+  get "/contact" => "thescriptures#contact", as: 'contact'
+  get "/shows" => "thescriptures#shows", as: 'shows'
+  get "/followyusso" => "thescriptures#followyusso", as: 'followyusso'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -47,20 +47,30 @@ div#menutext{
 	position: absolute;
 	padding-left: 2vw;
 	padding-right: 2vw;
-	top: 1vh;
+	top: 1em;
 	font-family: 'Poiret One', cursive;
-	font-size: 2em;
+	font-size: 1em;
+	height: 1em;
 	line-height: normal;
 	overflow: hidden;
 	z-index: 10;
 	position: fixed;
+	width: 96vw;
+	text-transform: uppercase;
+	letter-spacing: 0.25em;
 }
+
+.right{
+	float: right;
+	padding: 0 0.4vw !important;
+}
+
 
 
 .slide-up-effect a.slider {
 	overflow: hidden;
 	color: #fff;
-	padding: 0.25vw;
+	padding: 0 0.25vw;
 	cursor: pointer;
 }
 
@@ -145,8 +155,7 @@ div#footerlinks{
 
 a{
 	text-decoration: none;
-	color: #fff;
-
+	color: inherit;
 	&::visited{
 		color: #fff;
 	}
