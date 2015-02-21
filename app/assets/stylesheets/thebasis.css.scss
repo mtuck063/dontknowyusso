@@ -124,6 +124,7 @@ div#watchvid{
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
+	box-sizing: initial;
 	-webkit-transition: background-color 0.4s;
 	-moz-transition: background-color 0.4s;
 	transition: background-color 0.4s;
@@ -203,6 +204,8 @@ a.mobile-menu{
 	background-color: #fff;
 	color:#000;
 }
+
+
 
 
 
