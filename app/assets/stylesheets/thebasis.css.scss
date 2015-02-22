@@ -46,7 +46,6 @@ video#bgvideo {
 div#menutext{
 	position: absolute;
 	padding-left: 2vw;
-	padding-right: 2vw;
 	top: 1em;
 	font-family: 'Poiret One', cursive;
 	font-size: 1em;
@@ -55,7 +54,7 @@ div#menutext{
 	overflow: hidden;
 	z-index: 10;
 	position: fixed;
-	width: 96vw;
+	width: 99vw;
 	text-transform: uppercase;
 	letter-spacing: 0.25em;
 }
