@@ -117,8 +117,12 @@ $(document).ready(function(){
 	$(".spacer1").click(function(){
 		if(oddClick1){
 			$(".song1").get(0).play();
+			$("img.pausebutton1").fadeIn(400);
+			$("img.playbutton1").fadeOut(400);
 		}else{
 			$(".song1").get(0).pause();
+			$("img.pausebutton1").fadeOut(400);
+			$("img.playbutton1").fadeIn(400);
 		}
 		oddClick1 = !oddClick1;
 	});
@@ -126,8 +130,12 @@ $(document).ready(function(){
 	$(".spacer2").click(function(){
 		if(oddClick2){
 			$(".song2").get(0).play();
+			$("img.pausebutton2").fadeIn(400);
+			$("img.playbutton2").fadeOut(400);
 		}else{
 			$(".song2").get(0).pause();
+			$("img.pausebutton2").fadeOut(400);
+			$("img.playbutton2").fadeIn(400);
 		}
 		oddClick2 = !oddClick2;
 	});
