@@ -1,99 +1,32 @@
 <div id="theart-container-1" class="animsition">
 
-	<span class="thetitle">the art</span>
+	<span class="thetitle" style="padding-top : 23vh !important; ">the art</span>
 
 	<div class="row" style="max-width: 50rem; margin-top: 15vh;">
 		<div class="small-6 columns">
-			<span class="spacer"><%= image_tag 'ebensmoking.jpg', id: 'music', class: 'everyday-song' %></span>
+			<span class="spacer1">
+				<%= image_tag 'ebensmoking.jpg', id: 'music' %>
+				<%= image_tag 'playbutton.png', class: 'playbutton1' %>
+				<%= image_tag 'paused-button.png', class: 'pausebutton1' %>
+				<span class="song-caption1"> Everyday/Live the Life</span>
+			</span>
 		</div>
 		<div class="small-6 columns">
-			<span class="spacer"><%= image_tag 'darkness.jpg', id: 'music' %></span>
+			<span class="spacer2">
+				<%= image_tag 'darkness.jpg', id: 'music' %>
+				<%= image_tag 'playbutton.png', class: 'playbutton2' %>
+				<%= image_tag 'paused-button.png', class: 'pausebutton2' %>
+				<span class="song-caption2"> Make a Move</span>
+			</span>
 		</div>
 	</div>
 
-<!-- 	<div id="mixtapes">
-		<div class="container" style="margin-left:6vw; margin-right: 3.5vw;">
-			<div class="mixtape-container">
-				<%= link_to(image_tag("crookidbass.jpg", alt: "Crookidbass Mixtape", id: "crookidbass"), 
-																				theart_path+"#theart-container-2")  %>
-			</div>
-		</div>
-		<div class="container" style="margin-left:3.5vw; margin-right: 6vw;">
-			<div class="mixtape-container">
-				<%= link_to(image_tag("sandboxpride.jpg", alt: "Sandbox Pride Mixtape", id: "sandboxpride"), 
-																				theart_path+"#theart-container-3") %>
-			</div>
-		</div>
-	</div>	 -->
+<%= audio_tag("everyday.wav", autoplay: false, controls: false, class: 'song1' )  %>
+<%= audio_tag("makeamove.mp3", autoplay: false, controls: false, class: 'song2')  %>
 
 </div>
 
-<!-- <div id="theart-container-2" class="animsition">
 
-	<div class="row" style="max-width: 100rem">
-		<div class="small-3 columns">
-			<%= image_tag 'yussologo.svg', alt: 'Yusso Logo', id: 'music' %>
-		</div>
-		<div class="small-3 columns">
-			<%= image_tag 'yussologo.svg', alt: 'Yusso Logo', id: 'music' %>
-		</div>
-		<div class="small-3 columns">
-			<%= image_tag 'yussologo.svg', alt: 'Yusso Logo', id: 'music' %>
-		</div>
-		<div class="small-3 columns">
-			<%= image_tag 'yussologo.svg', alt: 'Yusso Logo', id: 'music' %>
-		</div>
-	</div>
-	<div class="row" style="max-width: 100rem">
-		<div class="small-3 columns">
-			<%= image_tag 'yussologo.svg', alt: 'Yusso Logo', id: 'music' %>
-		</div>
-		<div class="small-3 columns">
-			<%= image_tag 'yussologo.svg', alt: 'Yusso Logo', id: 'music' %>
-		</div>
-		<div class="small-3 columns">
-			<%= image_tag 'yussologo.svg', alt: 'Yusso Logo', id: 'music' %>
-		</div>
-		<div class="small-3 columns">
-			<%= image_tag 'yussologo.svg', alt: 'Yusso Logo', id: 'music' %>
-		</div>
-	</div>
 
-</div>
- -->
-<!-- <div id="theart-container-3" class="animsition">
 
-	<span class="title">Sandbox Pride</span>
-
-	<iframe class="soundcloud" width="90%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/70939929&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-</div> -->
-
-<div class="slide-up-effect not-mobile-friendly" id="footerlinks">
-	<%= link_to 'https://soundcloud.com/dontknowyusso', target: '_blank', class: 'slider' do %>
-		<span data-hover="SoundCloud">SoundCloud</span>
-	<%end%>
-	<%= link_to 'https://www.facebook.com/dontknowyusso', target: '_blank', class: 'slider' do %>
-		<span data-hover="Facebook">Facebook</span>
-	<%end%>
-	<%= link_to 'http://instagram.com/dontknowyusso', target: '_blank', class: 'slider' do %>
-		<span data-hover="Instagram">Instagram</span>
-	<%end%>
-	<%= link_to 'https://twitter.com/dontknowyusso', target: '_blank', class: 'slider' do %>
-		<span data-hover="Twitter">Twitter</span>
-	<%end%>
-</div>
-
-<!-- <div id="fp-nav">
-	<ul>
-		<li>
-			<%= link_to "", '#theart-container-1' , id: 'one' %>
-		</li>
-		<li>
-			<%= link_to "", '#theart-container-2' , id: 'two' %>
-		</li>
-		<li>
-			<%= link_to "", '#theart-container-3' , id: 'three' %>
-		</li>
-	</ul>
-</div> -->
 

@@ -26,49 +26,10 @@ $(document).ready(function(){
 	endlessIGScrolling(instagram_url);
 	var hash = window.location.hash;
 	var placeinwindow;
+	var oddClick1 = true;
+	var oddClick2 = true;
 	window.location.hash = "";
 
-	if(window.location.pathname == "/theART"){
-
-		if($(window).scrollTop() >= $(window).height()*2 ){
-			$('#three').css({'background-color' : '#fff' });
-			$('#two, #one').css({'background-color' : '' });
-		}
-		else if($(window).scrollTop() <= $(window).height()*2 && $(window).scrollTop() >= $(window).height()){
-			$('#one, #three').css({'background-color' : '' });
-			$('#two').css({'background-color' : '#fff' });
-		}else{
-			$('#three, #two').css({'background-color' : '' });
-			$('#one').css({'background-color' : '#fff' });
-		}
-
-		$(window).scroll( function(){ 
-			if($(window).scrollTop() >= $(window).height()*1.5 ){
-				$('#three').css({'background-color' : '#fff' });
-				$('#two, #one').css({'background-color' : '' });
-			}
-			else if($(window).scrollTop() <= $(window).height()*2 && $(window).scrollTop() >= $(window).height()/2){
-				$('#one, #three').css({'background-color' : '' });
-				$('#two').css({'background-color' : '#fff' });
-			}else{
-				$('#three, #two').css({'background-color' : '' });
-				$('#one').css({'background-color' : '#fff' });
-			}
-		});
-
-		$('div#mixtapes > .container:nth-child(1)').click( function(){
-			$('html,body').animate({
-				scrollTop: $('#theart-container-2').offset().top
-			}, 600);
-		});
-
-		$('div#mixtapes > .container:nth-child(2)').click( function(){
-			$('html,body').animate({
-				scrollTop: $('#theart-container-3').offset().top
-			}, 600);
-		});
-
-	}
 
 	if(window.innerWidth > 450){
 		$("div#thebasis-container-1 img").hide();
@@ -97,6 +58,10 @@ $(document).ready(function(){
 		}
 	});
 
+	$("img.playbutton1").hide();
+	$("img.playbutton2").hide();
+	$("img.pausebutton1").hide();
+	$("img.pausebutton2").hide();
 	$("#featuredvid").hide();
 	$(".close").hide();
 
@@ -108,6 +73,7 @@ $(document).ready(function(){
 
 	});
 
+
 	$(".close").click(function(){
 		$("#featuredvid").hide();
 		$(".close").hide();
@@ -116,6 +82,55 @@ $(document).ready(function(){
 
 	});
 
+	$(".spacer1").mouseenter( function(){
+		if(oddClick1){
+			$("img.playbutton1").fadeIn(400);
+		}else{
+			$("img.pausebutton1").fadeIn(400);
+		}
+		$(".spacer1").css({ 'cursor' : 'pointer' })
+
+	});
+
+	$(".spacer1").mouseleave( function(){
+		$("img.playbutton1").fadeOut(400);
+		$("img.pausebutton1").fadeOut(400);
+		$(".spacer1").css({ 'cursor' : 'none' })
+	});
+
+	$(".spacer2").mouseenter( function(){
+		if (oddClick2){
+			$("img.playbutton2").fadeIn(400);
+		}else{
+			$("img.pausebutton2").fadeIn(400);
+		}
+		$(".spacer2").css({ 'cursor' : 'pointer' })
+
+	});
+
+	$(".spacer2").mouseleave( function(){
+		$("img.playbutton2").fadeOut(400);
+		$("img.pausebutton2").fadeOut(400);
+		$(".spacer2").css({ 'cursor' : 'none' })
+	});
+
+	$(".spacer1").click(function(){
+		if(oddClick1){
+			$(".song1").get(0).play();
+		}else{
+			$(".song1").get(0).pause();
+		}
+		oddClick1 = !oddClick1;
+	});
+
+	$(".spacer2").click(function(){
+		if(oddClick2){
+			$(".song2").get(0).play();
+		}else{
+			$(".song2").get(0).pause();
+		}
+		oddClick2 = !oddClick2;
+	});
 
 });
 
@@ -157,9 +172,6 @@ function start(){
 	}
 	
 	$("#menutext2").css({ 'top' : (($(window).height() - $("div#caption").height())/2) + $("div#caption").height() + 15 });
-	$("#mixtapes").css({ 'padding-top' : ((($(window).height() - $("#mixtapes").height())/2) - $(".thetitle").height())/2 });
-	$(".soundcloud").css({ 'padding-top' : ((($(window).height() - $(".soundcloud").height())/2) - $(".title").height())/2 });
-	$(".thetitle").css({ 'padding-top' : ((($(window).height() - $("#mixtapes").height())/2) - $(".thetitle").height())/2 });
 	$(".title").css({ 'padding-top' : ((($(window).height() - $(".soundcloud").height())/2) - $(".title").height())/2 });
 	$("div#caption").css({ 'top' : (($(window).height() - $("div#caption").height())/2) });
 	$("#featuredvid, .close").css({ 'top' : (($(window).height() - $("#featuredvid").height())/2) });
