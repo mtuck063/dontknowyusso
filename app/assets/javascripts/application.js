@@ -19,6 +19,7 @@
 $(function(){ $(document).foundation(); });
 
 $(document).ready(function(){ 
+	console.log("TEST THIS!")
 
 	start(); 
 	scaleVideo();
