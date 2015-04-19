@@ -12,138 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
-
 $(document).ready(function(){ 
-	console.log("TEST THIS!")
-
 	start(); 
+	homePage();
+	pageAnimation();
 	scaleVideo();
+
 	var instagram_url = "https://api.instagram.com/v1/users/478280771/media/recent/?client_id=1770a52803f4453f95898d9db37464bf";
 	endlessIGScrolling(instagram_url);
-	var hash = window.location.hash;
-	var placeinwindow;
-	var oddClick1 = true;
-	var oddClick2 = true;
-	window.location.hash = "";
-
-
-	if(window.innerWidth > 450){
-		$("div#thebasis-container-1 img").hide();
-		$("#doyouknow").hide();
-		$("#doyouknow").fadeIn(1500);
-		$("#doyouknow").delay(1500).fadeOut(500);
-		$("div#thebasis-container-1 img").delay(5000).fadeIn(1500);
-	}else{
-		$("div#thebasis-container-1 img").hide();
-		$("#doyouknow").hide();
-		$("#doyouknow").delay(1000).fadeIn(1500);
-		$("div#thebasis-container-1 img").css({ 'top' : '10vh' });
-		$("div#thebasis-container-1 img").delay(1000).fadeIn(1500);
-	}
-
-	$('a[href*=#]:not([href=#])').click(function() {
-		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			var target = $(this.hash);
-			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			if (target.length) {
-				$('html,body').animate({
-					scrollTop: target.offset().top
-				}, 600);
-				return false;
-			}
-		}
-	});
-
-	$("img.playbutton1").hide();
-	$("img.playbutton2").hide();
-	$("img.pausebutton1").hide();
-	$("img.pausebutton2").hide();
-	$("#featuredvid").hide();
-	$(".close").hide();
-
-	$("#watchvid").click(function(){
-		$("#featuredvid").fadeIn(500);
-		$(".close").show();
-		$("#featuredvid").get(0).play();
-		$("#bgvideo").get(0).pause();
-
-	});
-
-
-	$(".close").click(function(){
-		$("#featuredvid").hide();
-		$(".close").hide();
-		$("#featuredvid").get(0).pause();
-		$("#bgvideo").get(0).play();
-
-	});
-
-	$(".spacer1").mouseenter( function(){
-		if(oddClick1){
-			$("img.playbutton1").fadeIn(400);
-		}else{
-			$("img.pausebutton1").fadeIn(400);
-		}
-		$(".spacer1").css({ 'cursor' : 'pointer' })
-
-	});
-
-	$(".spacer1").mouseleave( function(){
-		$("img.playbutton1").fadeOut(400);
-		$("img.pausebutton1").fadeOut(400);
-		$(".spacer1").css({ 'cursor' : 'none' })
-	});
-
-	$(".spacer2").mouseenter( function(){
-		if (oddClick2){
-			$("img.playbutton2").fadeIn(400);
-		}else{
-			$("img.pausebutton2").fadeIn(400);
-		}
-		$(".spacer2").css({ 'cursor' : 'pointer' })
-
-	});
-
-	$(".spacer2").mouseleave( function(){
-		$("img.playbutton2").fadeOut(400);
-		$("img.pausebutton2").fadeOut(400);
-		$(".spacer2").css({ 'cursor' : 'none' })
-	});
-
-	$(".spacer1").click(function(){
-		if(oddClick1){
-			$(".song1").get(0).play();
-			$("img.pausebutton1").fadeIn(400);
-			$("img.playbutton1").fadeOut(400);
-		}else{
-			$(".song1").get(0).pause();
-			$("img.pausebutton1").fadeOut(400);
-			$("img.playbutton1").fadeIn(400);
-		}
-		oddClick1 = !oddClick1;
-	});
-
-	$(".spacer2").click(function(){
-		if(oddClick2){
-			$(".song2").get(0).play();
-			$("img.pausebutton2").fadeIn(400);
-			$("img.playbutton2").fadeOut(400);
-		}else{
-			$(".song2").get(0).pause();
-			$("img.pausebutton2").fadeOut(400);
-			$("img.playbutton2").fadeIn(400);
-		}
-		oddClick2 = !oddClick2;
-	});
-
 });
-
-
 
 window.onresize = function() {
 	start(); 
@@ -152,41 +32,47 @@ window.onresize = function() {
 
 function start(){
 
-	if(window.innerWidth > 450){
-		$("#doyouknow").fadeOut(500);
-		$("div#thebasis-container-1 img").css({ 'top' : '1vh' });
-
-	}else{
-		$("#doyouknow").fadeIn(500);
-		$("div#thebasis-container-1 img").css({ 'top' : '10vh' });
-	}
-
-	if(window.innerWidth > 760){
-		$('video#bgvideo').css({ 'display' : 'block'});
-		$('.not-mobile-friendly').css({ 'display' : 'block'});
-		$('.mobile-friendly').css({ 'display' : 'none'});
-		$('#caption').css({ 'font-size' : '2em'});
-		$('.container').css({ 'display' : 'inline-block'});
-		$('.container:nth-child(1)').css({ 'margin' : '0 3.5vw 0 6vw'});
-		$('.container:nth-child(2)').css({ 'margin' : '0 6vw 0 3.5vw'});
-
-	}else{
-		$('video#bgvideo').css({ 'display' : 'none'});
-		$('.not-mobile-friendly').css({ 'display' : 'none'});
-		$('.mobile-friendly').css({ 'display' : 'block'});
-		$('#caption').css({ 'font-size' : '1em'});
-		$('.container').css({ 'display' : 'block'});
-		$('.container').css({ 'margin' : '4vmax auto'});
-
-	}
-	
-	$("#menutext2").css({ 'top' : (($(window).height() - $("div#caption").height())/2) + $("div#caption").height() + 15 });
-	$(".title").css({ 'padding-top' : ((($(window).height() - $(".soundcloud").height())/2) - $(".title").height())/2 });
-	$("div#caption").css({ 'top' : (($(window).height() - $("div#caption").height())/2) });
-	$("#featuredvid, .close").css({ 'top' : (($(window).height() - $("#featuredvid").height())/2) });
+	centerInWindowVertical("div#caption");
+	centerInWindowVertical("#featuredvid, .close");
 	$("#featuredvid, .close").css({ 'left' : (($(window).width() - $("#featuredvid").width())/2) });
 	$("div#watchvid").css({ 'top' : (($(window).height() - $("div#caption").height())/2) + $("div#caption").height() + 15 });
 
+}
+
+function homePage(){
+
+	// Fade in effect on landing page text
+	$("div#thebasis-container-1 img").hide();
+	$("#doyouknow").hide();
+	// console.log($("#doyouknow"));
+	$("#doyouknow").fadeIn(1500);
+	$("#doyouknow").delay(1500).fadeOut(500);
+	$("div#thebasis-container-1 img").delay(5000).fadeIn(1500);
+
+	// Hide the home page music video 
+	$("#featuredvid, .close").hide();
+
+	// Fade in the home page music video when clicked
+	$("#watchvid").click(function(){
+		$("#featuredvid").fadeIn(500);
+		$(".close").show();
+		$("#featuredvid").get(0).play();
+		$("#bgvideo").get(0).pause();
+	});
+
+	// Close the home page music video when close button clicked
+	$(".close").click(function(){
+		$("#featuredvid").hide();
+		$(".close").hide();
+		$("#featuredvid").get(0).pause();
+		$("#bgvideo").get(0).play();
+	});
+
+}
+
+function centerInWindowVertical(element){
+	$(element).css({ 'top' : (($(window).height() - $(element).height())/2) });
+	return false;
 }
 
 function scaleVideo() {
@@ -212,6 +98,7 @@ function scaleVideo() {
 			$('video#bgvideo').width( 'auto' );
 		}
 	}
+	return false;
 }
 
 function endlessIGScrolling(url){
@@ -241,7 +128,163 @@ function endlessIGScrolling(url){
 			});
 		}
 	});	
+	return false;
 }
+
+function pageAnimation(){
+
+	$("#thebasis-container-1.animsition").animsition({
+	  inClass               :   'fade-in-up-lg',
+	  outClass              :   'fade-out-left-lg',
+	  inDuration            :    1,
+	  outDuration           :    800,
+	  linkElement           :   '.animsition-link', 
+	  loading               :    true,
+	  loadingParentElement  :   'body', 
+	  loadingClass          :   'animsition-loading',
+	  unSupportCss          :   [],
+	  overlay               :   false,
+	  overlayClass          :   'animsition-overlay-slide',
+	  overlayParentElement  :   'body'
+	});
+	  
+	$("#followyusso-container-1.animsition").animsition({
+	  inClass               :   'fade-in-left-lg',
+	  outClass              :   'fade-out-left-lg',
+	  inDuration            :    1500,
+	  outDuration           :    800,
+	  linkElement           :   '.animsition-link', 
+	  loading               :    true,
+	  loadingParentElement  :   'body', 
+	  loadingClass          :   'animsition-loading',
+	  unSupportCss          :   [],
+	  overlay               :   false,
+	  overlayClass          :   'animsition-overlay-slide',
+	  overlayParentElement  :   'body'
+	});
+
+	$("#followyusso-container-2.animsition").animsition({
+	  inClass               :   'fade-in-left-lg',
+	  outClass              :   'fade-out-left-lg',
+	  inDuration            :    1500,
+	  outDuration           :    800,
+	  linkElement           :   '.animsition-link', 
+	  loading               :    true,
+	  loadingParentElement  :   'body', 
+	  loadingClass          :   'animsition-loading',
+	  unSupportCss          :   [],
+	  overlay               :   false,
+	  overlayClass          :   'animsition-overlay-slide',
+	  overlayParentElement  :   'body'
+	});
+
+	$("#theart-container-1.animsition").animsition({
+	  inClass               :   'fade-in-left-lg',
+	  outClass              :   'fade-out-left-lg',
+	  inDuration            :    1500,
+	  outDuration           :    800,
+	  linkElement           :   '.animsition-link', 
+	  loading               :    true,
+	  loadingParentElement  :   'body', 
+	  loadingClass          :   'animsition-loading',
+	  unSupportCss          :   [],
+	  overlay               :   false,
+	  overlayClass          :   'animsition-overlay-slide',
+	  overlayParentElement  :   'body'
+	});
+
+	$("#theart-container-2.animsition").animsition({
+	  inClass               :   'fade-in-left-lg',
+	  outClass              :   'fade-out-left-lg',
+	  inDuration            :    1500,
+	  outDuration           :    800,
+	  linkElement           :   '.animsition-link', 
+	  loading               :    true,
+	  loadingParentElement  :   'body', 
+	  loadingClass          :   'animsition-loading',
+	  unSupportCss          :   [],
+	  overlay               :   false,
+	  overlayClass          :   'animsition-overlay-slide',
+	  overlayParentElement  :   'body'
+	});
+
+	$("#theart-container-3.animsition").animsition({
+	  inClass               :   'fade-in-left-lg',
+	  outClass              :   'fade-out-left-lg',
+	  inDuration            :    1500,
+	  outDuration           :    800,
+	  linkElement           :   '.animsition-link', 
+	  loading               :    true,
+	  loadingParentElement  :   'body', 
+	  loadingClass          :   'animsition-loading',
+	  unSupportCss          :   [],
+	  overlay               :   false,
+	  overlayClass          :   'animsition-overlay-slide',
+	  overlayParentElement  :   'body'
+	});
+
+	$("#theartist-container-1.animsition").animsition({
+	  inClass               :   'fade-in-left-lg',
+	  outClass              :   'fade-out-left-lg',
+	  inDuration            :    1500,
+	  outDuration           :    800,
+	  linkElement           :   '.animsition-link', 
+	  loading               :    true,
+	  loadingParentElement  :   'body', 
+	  loadingClass          :   'animsition-loading',
+	  unSupportCss          :   [],
+	  overlay               :   false,
+	  overlayClass          :   'animsition-overlay-slide',
+	  overlayParentElement  :   'body'
+	});
+
+	$("#theartist-container-2.animsition").animsition({
+	  inClass               :   'fade-in-left-lg',
+	  outClass              :   'fade-out-left-lg',
+	  inDuration            :    1500,
+	  outDuration           :    800,
+	  linkElement           :   '.animsition-link', 
+	  loading               :    true,
+	  loadingParentElement  :   'body', 
+	  loadingClass          :   'animsition-loading',
+	  unSupportCss          :   [],
+	  overlay               :   false,
+	  overlayClass          :   'animsition-overlay-slide',
+	  overlayParentElement  :   'body'
+	});
+
+
+	$("#shows-container-1.animsition").animsition({
+	  inClass               :   'fade-in-left-lg',
+	  outClass              :   'fade-out-left-lg',
+	  inDuration            :    1500,
+	  outDuration           :    800,
+	  linkElement           :   '.animsition-link', 
+	  loading               :    true,
+	  loadingParentElement  :   'body', 
+	  loadingClass          :   'animsition-loading',
+	  unSupportCss          :   [],
+	  overlay               :   false,
+	  overlayClass          :   'animsition-overlay-slide',
+	  overlayParentElement  :   'body'
+	});
+
+	$("#contact-container-1.animsition").animsition({
+	  inClass               :   'fade-in-left-lg',
+	  outClass              :   'fade-out-left-lg',
+	  inDuration            :    1500,
+	  outDuration           :    800,
+	  linkElement           :   '.animsition-link', 
+	  loading               :    true,
+	  loadingParentElement  :   'body', 
+	  loadingClass          :   'animsition-loading',
+	  unSupportCss          :   [],
+	  overlay               :   false,
+	  overlayClass          :   'animsition-overlay-slide',
+	  overlayParentElement  :   'body'
+	});
+
+};
 
 
 

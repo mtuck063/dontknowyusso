@@ -10,12 +10,15 @@ img#music{
 	margin: 0 auto;
 	display: block;
 	opacity: 0.85;
+	height: 350px;
+	width: 350px;
 }
 
-.spacer1, .spacer2{
+.music-container-1, .music-container-2{
 	display: inline-block;
 	padding: 1rem;
 	background-color: #fff;
+	position: relative;
 }
 
 .playbutton1, .playbutton2 {
@@ -25,6 +28,7 @@ img#music{
 	margin: auto;
 	height: 50px;
 	width: 50px;
+
 
 }
 
@@ -50,7 +54,7 @@ img#music{
 
 }
 
-span.title, span.thetitle{
+span.thetitle{
 	display: block;
 	color: #fff;
 	font: 300 3em 'Open Sans', sans-serif;
@@ -59,6 +63,20 @@ span.title, span.thetitle{
 	text-align: center;
 	letter-spacing: 0.15em;
 }
+
+.temp-row{
+	max-width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 5vh;
+}
+
+.temp-columns{
+	margin: 0 30px;
+	display: inline-block;
+}
+
+
 
 
 
