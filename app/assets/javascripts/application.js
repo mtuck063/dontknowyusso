@@ -39,7 +39,7 @@ $(document).ready(function(){
 	});
 
 	setTimeout(function(){
-		$(".bg-zoom-in").css({ 'transform' : 'scale(1.5, 1.5)'});
+		$(".bg-zoom-in").addClass("trans");
 	}, 500);
 
 });
