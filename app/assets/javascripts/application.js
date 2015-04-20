@@ -16,13 +16,26 @@
 //= require_tree .
 
 $(document).ready(function(){ 
+	pageAnimation();
 	start(); 
 	homePage();
-	pageAnimation();
 	scaleVideo();
 
 	var instagram_url = "https://api.instagram.com/v1/users/478280771/media/recent/?client_id=1770a52803f4453f95898d9db37464bf";
 	endlessIGScrolling(instagram_url);
+
+	$(window).scroll( function(){
+		if($(window).scrollTop() > 50){
+			$("div#header-container").fadeIn(300);
+		}else{
+			$("div#header-container").fadeOut(300);
+		}
+	});
+
+	$("a").click(function(){
+		$("div#header-container").fadeOut(300);
+	});
+
 });
 
 window.onresize = function() {
@@ -36,6 +49,7 @@ function start(){
 	centerInWindowVertical("#featuredvid, .close");
 	$("#featuredvid, .close").css({ 'left' : (($(window).width() - $("#featuredvid").width())/2) });
 	$("div#watchvid").css({ 'top' : (($(window).height() - $("div#caption").height())/2) + $("div#caption").height() + 15 });
+
 
 }
 
@@ -133,10 +147,10 @@ function endlessIGScrolling(url){
 
 function pageAnimation(){
 
-	$("#thebasis-container-1.animsition").animsition({
-	  inClass               :   'fade-in-up-lg',
-	  outClass              :   'fade-out-left-lg',
-	  inDuration            :    1,
+	$(".animsition").animsition({
+	  inClass               :   'fade-in',
+	  outClass              :   'fade-out',
+	  inDuration            :    1000,
 	  outDuration           :    800,
 	  linkElement           :   '.animsition-link', 
 	  loading               :    true,
@@ -145,143 +159,8 @@ function pageAnimation(){
 	  unSupportCss          :   [],
 	  overlay               :   false,
 	  overlayClass          :   'animsition-overlay-slide',
-	  overlayParentElement  :   'body'
-	});
-	  
-	$("#followyusso-container-1.animsition").animsition({
-	  inClass               :   'fade-in-left-lg',
-	  outClass              :   'fade-out-left-lg',
-	  inDuration            :    1500,
-	  outDuration           :    800,
-	  linkElement           :   '.animsition-link', 
-	  loading               :    true,
-	  loadingParentElement  :   'body', 
-	  loadingClass          :   'animsition-loading',
-	  unSupportCss          :   [],
-	  overlay               :   false,
-	  overlayClass          :   'animsition-overlay-slide',
-	  overlayParentElement  :   'body'
-	});
-
-	$("#followyusso-container-2.animsition").animsition({
-	  inClass               :   'fade-in-left-lg',
-	  outClass              :   'fade-out-left-lg',
-	  inDuration            :    1500,
-	  outDuration           :    800,
-	  linkElement           :   '.animsition-link', 
-	  loading               :    true,
-	  loadingParentElement  :   'body', 
-	  loadingClass          :   'animsition-loading',
-	  unSupportCss          :   [],
-	  overlay               :   false,
-	  overlayClass          :   'animsition-overlay-slide',
-	  overlayParentElement  :   'body'
-	});
-
-	$("#theart-container-1.animsition").animsition({
-	  inClass               :   'fade-in-left-lg',
-	  outClass              :   'fade-out-left-lg',
-	  inDuration            :    1500,
-	  outDuration           :    800,
-	  linkElement           :   '.animsition-link', 
-	  loading               :    true,
-	  loadingParentElement  :   'body', 
-	  loadingClass          :   'animsition-loading',
-	  unSupportCss          :   [],
-	  overlay               :   false,
-	  overlayClass          :   'animsition-overlay-slide',
-	  overlayParentElement  :   'body'
-	});
-
-	$("#theart-container-2.animsition").animsition({
-	  inClass               :   'fade-in-left-lg',
-	  outClass              :   'fade-out-left-lg',
-	  inDuration            :    1500,
-	  outDuration           :    800,
-	  linkElement           :   '.animsition-link', 
-	  loading               :    true,
-	  loadingParentElement  :   'body', 
-	  loadingClass          :   'animsition-loading',
-	  unSupportCss          :   [],
-	  overlay               :   false,
-	  overlayClass          :   'animsition-overlay-slide',
-	  overlayParentElement  :   'body'
-	});
-
-	$("#theart-container-3.animsition").animsition({
-	  inClass               :   'fade-in-left-lg',
-	  outClass              :   'fade-out-left-lg',
-	  inDuration            :    1500,
-	  outDuration           :    800,
-	  linkElement           :   '.animsition-link', 
-	  loading               :    true,
-	  loadingParentElement  :   'body', 
-	  loadingClass          :   'animsition-loading',
-	  unSupportCss          :   [],
-	  overlay               :   false,
-	  overlayClass          :   'animsition-overlay-slide',
-	  overlayParentElement  :   'body'
-	});
-
-	$("#theartist-container-1.animsition").animsition({
-	  inClass               :   'fade-in-left-lg',
-	  outClass              :   'fade-out-left-lg',
-	  inDuration            :    1500,
-	  outDuration           :    800,
-	  linkElement           :   '.animsition-link', 
-	  loading               :    true,
-	  loadingParentElement  :   'body', 
-	  loadingClass          :   'animsition-loading',
-	  unSupportCss          :   [],
-	  overlay               :   false,
-	  overlayClass          :   'animsition-overlay-slide',
-	  overlayParentElement  :   'body'
-	});
-
-	$("#theartist-container-2.animsition").animsition({
-	  inClass               :   'fade-in-left-lg',
-	  outClass              :   'fade-out-left-lg',
-	  inDuration            :    1500,
-	  outDuration           :    800,
-	  linkElement           :   '.animsition-link', 
-	  loading               :    true,
-	  loadingParentElement  :   'body', 
-	  loadingClass          :   'animsition-loading',
-	  unSupportCss          :   [],
-	  overlay               :   false,
-	  overlayClass          :   'animsition-overlay-slide',
-	  overlayParentElement  :   'body'
-	});
-
-
-	$("#shows-container-1.animsition").animsition({
-	  inClass               :   'fade-in-left-lg',
-	  outClass              :   'fade-out-left-lg',
-	  inDuration            :    1500,
-	  outDuration           :    800,
-	  linkElement           :   '.animsition-link', 
-	  loading               :    true,
-	  loadingParentElement  :   'body', 
-	  loadingClass          :   'animsition-loading',
-	  unSupportCss          :   [],
-	  overlay               :   false,
-	  overlayClass          :   'animsition-overlay-slide',
-	  overlayParentElement  :   'body'
-	});
-
-	$("#contact-container-1.animsition").animsition({
-	  inClass               :   'fade-in-left-lg',
-	  outClass              :   'fade-out-left-lg',
-	  inDuration            :    1500,
-	  outDuration           :    800,
-	  linkElement           :   '.animsition-link', 
-	  loading               :    true,
-	  loadingParentElement  :   'body', 
-	  loadingClass          :   'animsition-loading',
-	  unSupportCss          :   [],
-	  overlay               :   false,
-	  overlayClass          :   'animsition-overlay-slide',
-	  overlayParentElement  :   'body'
+	  overlayParentElement  :   'body',
+	  opacity 							: 	1
 	});
 
 };

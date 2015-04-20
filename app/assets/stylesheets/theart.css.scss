@@ -1,5 +1,5 @@
 div#theart-container-1{
-	background-image: image-url('chambers.jpg');
+	background-image: image-url('talkingtrees.jpg');
 	background-size: cover;
 	height: 100vh;
 	background-attachment: fixed;
@@ -16,8 +16,8 @@ img#music{
 
 .music-container-1, .music-container-2{
 	display: inline-block;
-	padding: 1rem;
-	background-color: #fff;
+	padding: 10px;
+	background-color: #eee;
 	position: relative;
 }
 
@@ -28,8 +28,6 @@ img#music{
 	margin: auto;
 	height: 50px;
 	width: 50px;
-
-
 }
 
 .pausebutton1, .pausebutton2{
@@ -64,14 +62,15 @@ span.thetitle{
 	letter-spacing: 0.15em;
 }
 
-.temp-row{
+.row{
 	max-width: 900px;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 5vh;
+	height: 400px;
+	position: absolute;
+	margin: auto;
+	bottom: 0; top: 0; right: 0; left: 0;
 }
 
-.temp-columns{
+.columns{
 	margin: 0 30px;
 	display: inline-block;
 }

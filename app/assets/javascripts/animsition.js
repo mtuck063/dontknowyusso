@@ -18,7 +18,8 @@
                                   '-o-animation-duration'],
         overlay               :   false,
         overlayClass          :   'animsition-overlay-slide',
-        overlayParentElement  :   'body'
+        overlayParentElement  :   'body',
+        opacity               :    1
       }, options);
 
       // Remove the "Animsition" in a browser
@@ -96,7 +97,6 @@
       var options   = $this.data(namespace).options;
       var $loading  = $(options.loadingParentElement).children("."+options.loadingClass);
       $loading.fadeOut().remove();
-      console.log($loading);
     },
 
     supportCheck: function(options){
@@ -164,13 +164,13 @@
       }
 
       if(overlayMode) {
-        methods.pageInOverlay.call(_this,inClass,inDuration);
+        methods.pageInOverlay.call(_this,inClass,inDuration, options);
       } else {
-        methods.pageInBasic.call(_this,inClass,inDuration);
+        methods.pageInBasic.call(_this,inClass,inDuration, options);
       }
     },
 
-    pageInBasic: function(inClass,inDuration){
+    pageInBasic: function(inClass,inDuration,options){
       var $this = $(this);
 
       $this
@@ -179,16 +179,16 @@
         .animateCallback(function(){
           $this
             .removeClass(inClass)
-            .css({ "opacity" : 1 });
+            .css({ "opacity" : options.opacity });
         });
     },
 
-    pageInOverlay: function(inClass,inDuration){
+    pageInOverlay: function(inClass,inDuration,options){
       var $this = $(this);
       var options = $this.data(namespace).options;
 
       $this
-        .css({ "opacity" : 1 });
+        .css({ "opacity" : options.opacity });
       $(options.overlayParentElement).children('.' + options.overlayClass)
         .css({ "animation-duration" : (inDuration / 1000) + "s" })
         .addClass(inClass);
@@ -246,9 +246,10 @@
     destroy: function(){
       return this.each(function(){
         var $this = $(this);
+        var options = $this.data(namespace).options;
         $(window).unbind('.'+namespace);
         $this
-          .css({'opacity':1})
+          .css({'opacity': options.opacity})
           .removeData(namespace);
       });
     }

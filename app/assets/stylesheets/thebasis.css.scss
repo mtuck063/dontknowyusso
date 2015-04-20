@@ -43,16 +43,24 @@ video#bgvideo {
 	height: 100vh;
 }
 
-div#menutext{
+div#header-container{
+	background-color: #141519;
+	position: fixed;
+	z-index: 10;
+	height: 40px;
+	width: 100vw;
+	opacity: 0.7;
+	display: none;
+}
+
+div#header{
 	position: absolute;
-	top: 1em;
-	font-family: 'Poiret One', cursive;
+	font-family: 'Poiret One', sans-serif;
 	font-size: 1em;
-	height: 1em;
-	line-height: normal;
 	overflow: hidden;
 	z-index: 10;
 	position: fixed;
+	line-height: 40px;
 	width: 99vw;
 	left: 0.5vw;
 	text-transform: uppercase;
@@ -97,7 +105,7 @@ div#menutext{
 }
 
 div#caption{
-	font-family: 'Poiret One', cursive;
+	font-family: 'Poiret One', sans-serif;
 	font-size: 2em;
 	color: #ddd;
 	position: absolute;
@@ -108,7 +116,7 @@ div#caption{
 }
 
 div#watchvid{
-	font: 400 1em 'Poiret One', cursive;
+	font: 400 1em 'Poiret One', sans-serif;
 	color: #ddd;
 	border: 1px solid #ddd;
 	padding: 1.5em 5em;
@@ -138,15 +146,15 @@ div#footerlinks{
 	text-align: center;
 	position: fixed;
 	bottom: 0.5vh;
-	font-family: 'Poiret One', cursive;
+	font-family: 'Poiret One', sans-serif;
 	font-size: 1em;
 	line-height: normal;
 	overflow: hidden;
-	color: #ccc;
+	color: #fff;
 	z-index: 10;
 
 	a.slider{
-		color: #ccc;
+		color: #fff;
 	}
 }
 
