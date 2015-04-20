@@ -10,6 +10,7 @@ div#thebasis-container-1{
 	    margin: 0 auto;
 	    top: 1vh;left: 0;right: 0;bottom: 0;
 	    z-index: 2;
+	    opacity: 0.7;
 	}
 
 	#doyouknow{
@@ -44,12 +45,12 @@ video#bgvideo {
 }
 
 div#header-container{
-	background-color: #141519;
+	background-color: #fff;
 	position: fixed;
 	z-index: 10;
 	height: 40px;
 	width: 100vw;
-	opacity: 0.7;
+	opacity: 0.85;
 	display: none;
 }
 
@@ -65,6 +66,10 @@ div#header{
 	left: 0.5vw;
 	text-transform: uppercase;
 	letter-spacing: 0.25em;
+  -webkit-transition: 200ms linear; 
+  -moz-transition: 200ms linear;
+  -o-transition: 200ms linear;
+  transition: 200ms linear;
 }
 
 .right{

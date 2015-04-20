@@ -27,14 +27,20 @@ $(document).ready(function(){
 	$(window).scroll( function(){
 		if($(window).scrollTop() > 50){
 			$("div#header-container").fadeIn(300);
+			$(".slide-up-effect a.slider").css({ 'color' : '#141519'});
 		}else{
 			$("div#header-container").fadeOut(300);
+			$(".slide-up-effect a.slider").css({ 'color' : '#fff'});
 		}
 	});
 
 	$("a").click(function(){
 		$("div#header-container").fadeOut(300);
 	});
+
+	setTimeout(function(){
+		$(".bg-zoom-in").css({ 'transform' : 'scale(1.5, 1.5)'});
+	}, 500);
 
 });
 
