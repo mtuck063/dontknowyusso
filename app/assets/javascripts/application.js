@@ -42,6 +42,16 @@ $(document).ready(function(){
 		$(".bg-zoom-in").addClass("trans");
 	}, 500);
 
+	$(".shows-row").mouseenter( function(){
+		$(this).children().addClass("show");
+		$($(this).children()[4]).css({ 'width' : '100%' });
+	});
+
+	$(".shows-row").mouseleave( function(){
+		$(this).children().removeClass("show");
+		$("svg.line").css({'width' : '5%'});
+	});
+	
 });
 
 window.onresize = function() {

@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
+  get "/shows/list" => "shows#editor", as: 'editor' 
+
+  resources :shows
+
   root "thescriptures#thebasis"
 
   get "/theARTIST" => "thescriptures#theartist", as: 'theartist'
   get "/theART" => "thescriptures#theart", as: 'theart'
   get "/contact" => "thescriptures#contact", as: 'contact'
-  get "/shows" => "thescriptures#shows", as: 'shows'
   get "/followyusso" => "thescriptures#followyusso", as: 'followyusso'
 
   # The priority is based upon order of creation: first created -> highest priority.

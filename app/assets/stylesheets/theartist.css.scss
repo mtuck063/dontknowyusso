@@ -98,17 +98,17 @@ div#theartist-container-1{
 }
 
 .bg-zoom-in{
-	-webkit-transition: -webkit-transform 45s; 
-  -moz-transition: -moz-transform  45s;
-  -o-transition: -o-transform  45s;
-  transition: transform 45s;
+	-webkit-transition: -webkit-transform 25s; 
+  -moz-transition: -moz-transform  25s;
+  -o-transition: -o-transform  25s;
+  transition: transform 25s;
 }
 
 .trans{
-	-webkit-transform : scale(1.5, 1.5);
-	-moz-transform : scale(1.5, 1.5);
-	-o-transform : scale(1.5, 1.5);
-	transform : scale(1.5, 1.5);
+	-webkit-transform : scale(1.35, 1.35);
+	-moz-transform : scale(1.35, 1.35);
+	-o-transform : scale(1.35, 1.35);
+	transform : scale(1.35, 1.35);
 }
 
 .bg-container{

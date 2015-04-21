@@ -1,0 +1,26 @@
+<div class="bg-container">
+  <div id="shows-container-1" class="animsition bg-zoom-in"></div>
+</div>
+
+  <div id="shows-table">  
+    <% @shows.each do |show| %>
+    <div class="shows-row">
+      <span class="shows-columns title"><%= show.title %></span>
+      <span class="shows-columns date"><%= link_to 'Edit', edit_show_path(show), class: 'animsition-link' %></span>
+      <span class="shows-columns time"><%= link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+      <svg class="line">
+        <line x1="0" y1="0" x2="100%" y2="0" />
+      </svg>
+    </div>
+
+    <% end %>
+  </div>
+
+
+<%= render 'layouts/footer' %>
+
+
+
+
+
+
