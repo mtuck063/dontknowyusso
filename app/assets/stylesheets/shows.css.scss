@@ -21,9 +21,8 @@ div.form{
 	width: 70vw;
 	bottom: 0;left: 0; right: 0;
 	color: #eee;
-	font-size: 1.1rem;
-	font-family: 'Poiret One', sans-serif;
-	letter-spacing: 2px;
+	font-family: 'Source Code Pro', sans-serif;
+	letter-spacing: 1px;
 }
 
 .shows-row{
@@ -56,15 +55,18 @@ div.form{
 .date{
 	width: 20%;
 	opacity: 0;
+	font-weight: 300;
 }
 
 .time{
 	width: 10%;
+	font-weight: 300;
 	opacity: 0;
 }
 
 .location{
 	width: 35%;
+	font-weight: 300;
 	opacity: 0;
 }
 

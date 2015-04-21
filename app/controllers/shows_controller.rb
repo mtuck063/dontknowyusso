@@ -4,7 +4,7 @@ class ShowsController < ApplicationController
   # GET /shows
   # GET /shows.json
   def index
-    @shows = Show.all.reverse.first(5)
+    @shows = Show.all.last(5).reverse
   end
 
   # GET /shows/1
@@ -41,14 +41,10 @@ class ShowsController < ApplicationController
   # PATCH/PUT /shows/1
   # PATCH/PUT /shows/1.json
   def update
-    respond_to do |format|
-      if @show.update(show_params)
-        format.html { redirect_to @show, notice: 'Show was successfully updated.' }
-        format.json { render :show, status: :ok, location: @show }
-      else
-        format.html { render :edit }
-        format.json { render json: @show.errors, status: :unprocessable_entity }
-      end
+    if @show.update(show_params)
+    redirect_to shows_path
+    else
+    render :edit 
     end
   end
 

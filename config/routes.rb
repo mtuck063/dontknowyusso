@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   root "thescriptures#thebasis"
 
-  get "/theARTIST" => "thescriptures#theartist", as: 'theartist'
-  get "/theART" => "thescriptures#theart", as: 'theart'
+  get "/yusso" => "thescriptures#theartist", as: 'theartist'
+  get "/music" => "thescriptures#theart", as: 'theart'
   get "/contact" => "thescriptures#contact", as: 'contact'
-  get "/followyusso" => "thescriptures#followyusso", as: 'followyusso'
+  get "/newsfeed" => "thescriptures#followyusso", as: 'followyusso'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
