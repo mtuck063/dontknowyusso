@@ -1,18 +1,29 @@
-<div id="header-container" ></div>
-<div class="slide-up-effect not-mf animsition" id="header">
-	<%= link_to root_path, class: 'slider animsition-link' do %>
-		<span data-hover="home">HOME</span>
+<svg class="hamburger" height="40" width="50">
+  <line x1="10" y1="10" x2="40" y2="10" />
+  <line x1="10" y1="20" x2="40" y2="20" />
+  <line x1="10" y1="30" x2="40" y2="30" />
+</svg>
+
+<svg class="close-x" height="50" width="50">
+  <line x1="10" y1="10" x2="40" y2="40" />
+  <line x1="10" y1="40" x2="40" y2="10" />
+</svg>
+
+<div id="header-container">
+	<%= link_to(root_path, class: 'animsition-link logo')  do %>
+		<%= image_tag("home_page.png", class: 'icon') %>
+		<span class="link-caption">HOME</span>
 	<%end%>
-	<%= link_to theart_path, class: 'slider animsition-link' do %>
-		<span data-hover="music">music</span>
+	<%= link_to(theartist_path, class: 'animsition-link logo')  do %>
+		<%= image_tag("yusso_page.png", class: 'icon') %>
+		<span class="link-caption">YUSSO</span>
 	<%end%>
-	<%= link_to theartist_path, class: 'slider animsition-link' do %>
-		<span data-hover="yusso">yusso</span>
+	<%= link_to(theart_path, class: 'animsition-link logo')  do %>
+		<%= image_tag("music_page.png", class: 'icon') %>
+		<span class="link-caption">MUSIC</span>
 	<%end%>
-	<%= link_to followyusso_path, class: 'slider animsition-link right' do %>
-		<span data-hover="news feed">news feed</span>
-	<%end%>
-	<%= link_to shows_path, class: 'slider animsition-link right' do %>
-		<span data-hover="shows">SHOWS</span>
+	<%= link_to(shows_path, class: 'animsition-link logo')  do %>
+		<%= image_tag("shows_page.png", class: 'icon') %>
+		<span class="link-caption">SHOWS</span>
 	<%end%>
 </div>

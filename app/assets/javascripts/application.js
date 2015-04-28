@@ -13,7 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery-ui
 //= require_tree .
+
+
 
 $(document).ready(function(){ 
 	pageAnimation();
@@ -35,7 +38,8 @@ $(document).ready(function(){
 	});
 
 	$("a").click(function(){
-		$("div#header-container").fadeOut(300);
+		$("a.logo").fadeOut(300);
+		$("svg.close-x").css({'opacity' : '0','z-index' : '100' });
 	});
 
 	setTimeout(function(){
@@ -51,6 +55,32 @@ $(document).ready(function(){
 		$(this).children().removeClass("show");
 		$("svg.line").css({'width' : '5%'});
 	});
+
+	$("a.logo").mouseenter( function(){
+		$($(this).children()[0]).css({'opacity' : '0.6'});
+		$($(this).children()[1]).css({'opacity' : '1'});
+	});
+
+	$("a.logo").mouseleave( function(){
+		$($(this).children()[0]).css({'opacity' : '1'});
+		$($(this).children()[1]).css({'opacity' : '0'});
+	});
+
+	$("div#header-container").hide();
+
+	$("svg.hamburger").click(function(){
+		$("div#header-container").show("slide", { direction: "up" }, 1000);
+		$("a.logo").css({'opacity' : '1'});
+		$(this).css({'opacity' : '0','z-index' : '100' });
+		$("svg.close-x").css({'opacity' : '1', 'z-index' : '101'});
+	});
+
+	$("svg.close-x").click(function(){
+		$("div#header-container").hide("slide", { direction: "up" }, 1000);
+		$(this).css({'opacity' : '0', 'z-index' : '100'});
+		$("svg.hamburger").css({'opacity' : '1', 'z-index' : '101'});
+	});
+
 	
 });
 
@@ -60,11 +90,11 @@ window.onresize = function() {
 };
 
 function start(){
-
+	$("#doyouknow").delay(1500).fadeOut(500);
 	centerInWindowVertical("div#caption");
 	centerInWindowVertical("#featuredvid, .close");
 	$("#featuredvid, .close").css({ 'left' : (($(window).width() - $("#featuredvid").width())/2) });
-	$("div#watchvid").css({ 'top' : (($(window).height() - $("div#caption").height())/2) + $("div#caption").height() + 15 });
+	$("div#watchvid").css({ 'top' : (($(window).height() - $("div#caption").height())/2) + $("div#caption").height() + 30 });
 
 
 }
@@ -167,7 +197,7 @@ function pageAnimation(){
 	  inClass               :   'fade-in',
 	  outClass              :   'fade-out',
 	  inDuration            :    1000,
-	  outDuration           :    800,
+	  outDuration           :    0,
 	  linkElement           :   '.animsition-link', 
 	  loading               :    true,
 	  loadingParentElement  :   'body', 
@@ -178,6 +208,7 @@ function pageAnimation(){
 	  overlayParentElement  :   'body',
 	  opacity 							: 	1
 	});
+
 
 };
 

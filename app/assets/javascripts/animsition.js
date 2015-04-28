@@ -3,6 +3,7 @@
   var namespace = 'animsition';
   var methods = {
     init: function(options){
+
       options = $.extend({
         inClass               :   'fade-in',
         outClass              :   'fade-out',
@@ -21,6 +22,7 @@
         overlayParentElement  :   'body',
         opacity               :    1
       }, options);
+
 
       // Remove the "Animsition" in a browser
       // that does not support the "animaition-duration".

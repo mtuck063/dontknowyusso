@@ -41,9 +41,9 @@ div#scroll{
 	text-transform: uppercase;
 }
 
-.arrows {
+.arrows{
 	width: 60px;
-	height: 72px;
+	height: 90px;
 	position: fixed;
 	left: 90%;
 	top:50%;
@@ -98,10 +98,10 @@ div#theartist-container-1{
 }
 
 .bg-zoom-in{
-	-webkit-transition: -webkit-transform 25s; 
-  -moz-transition: -moz-transform  25s;
-  -o-transition: -o-transform  25s;
-  transition: transform 25s;
+	-webkit-transition: -webkit-transform 20s; 
+  -moz-transition: -moz-transform  20s;
+  -o-transition: -o-transform  20s;
+  transition: transform 20s;
 }
 
 .trans{

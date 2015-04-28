@@ -1,8 +1,6 @@
 div#thebasis-container-1{
-	/*background-image: image-url('eben-v3.jpg');*/
-	/*background-size: cover;*/
-	/*height: 100vh;*/
-	/*line-height: 100vh;*/
+	height: 100vh;
+	width: 100vw;
 
 	img{
 		width: 40vw;
@@ -23,59 +21,170 @@ div#thebasis-container-1{
 	}
 }
 
-@media screen and (max-width: 450px){
-
-	div#thebasis-container-1{
-
-		img {
-			width: 90vw;
-			top: 10vh;
-		}
-
-		#doyouknow{
-		font-size: 3em;
-		}
-	}
-}
-
 video#bgvideo {
 	position: fixed;
 	z-index: 1;
 	height: 100vh;
+	
 }
+
+div#caption{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.5em;
+	color: #ddd;
+	position: absolute;
+	z-index: 3;
+	line-height: normal;
+	width: 100vw;
+	text-align: center;
+}
+
+div#watchvid{
+	font: 400 1em 'Poiret One', sans-serif;
+	color: #ddd;
+	border: 1px solid #ddd;
+	padding: 1.5em 5em;
+	z-index: 3;
+	width: 8em;
+	text-align: center;
+	position: relative;
+	text-transform: uppercase;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	box-sizing: initial;
+	-webkit-transition: 200ms linear; 
+  -moz-transition: 200ms linear;
+  -o-transition: 200ms linear;
+  transition: 200ms linear;
+
+	&:hover{
+		cursor: pointer;
+		/*opacity: 0.5;*/
+		border: 1px solid #ffd700;
+		color: #ffd700;
+	}
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+	&::visited{
+		color: #ddd;
+	}
+}
+
+video#featuredvid{
+	display: block;
+	z-index: 100;
+	position: absolute;
+	height: 50vh;
+	margin: 0 auto;
+	border: 1px solid #ddd;
+}
+
+div.close{
+	letter-spacing: 2px;
+	font: 300 1em 'Open Sans', sans-serif;
+	z-index: 101;
+	color:#ddd;
+	position: absolute;
+	margin: 0 auto;
+	padding: 5px;
+
+	&:hover{
+		cursor: pointer;
+	}
+}
+
+/*HEADER*/
 
 div#header-container{
-	background-color: #fff;
-	position: fixed;
-	z-index: 10;
-	height: 40px;
-	width: 100vw;
-	opacity: 0.85;
-	display: none;
+	background-color: #141519;
+	z-index: 100;
+	position: absolute;
+	padding: 17vh 17vw;
+	height: 66vh;
+	width: 66vw;
 }
 
-div#header{
-	position: absolute;
-	font-family: 'Poiret One', sans-serif;
-	font-size: 1em;
-	overflow: hidden;
-	z-index: 10;
-	position: fixed;
-	line-height: 40px;
-	width: 99vw;
-	left: 0.5vw;
-	text-transform: uppercase;
-	letter-spacing: 0.25em;
-  -webkit-transition: 200ms linear; 
+svg.hamburger{
+  -webkit-transform-origin: 0 0 0;
+  position: fixed;
+  z-index: 100;
+  right: 10px;
+  top: 20px;
+  z-index: 101;
+	&:hover{
+		cursor: pointer;
+	}
+}
+
+svg.hamburger line{
+	stroke: #eee;
+	opacity: 0.9;
+	stroke-width: 3px;
+}
+
+img.icon{
+	height: 30vh;
+	width: 30vw;
+	position: relative;
+	-webkit-transition: 200ms linear; 
   -moz-transition: 200ms linear;
   -o-transition: 200ms linear;
   transition: 200ms linear;
 }
 
-.right{
-	float: right;
-	/*padding: 0 1vw !important;*/
+.link-caption{
+	position: absolute;
+	top: 0; bottom: 0;left: 0; right: 0;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: 'Source Code Pro', sans-serif;
+	font-weight: 300;
+	font-size: 2em;
+	z-index: 1005;
+	line-height: 35vh;
+	opacity: 0;
+	  -webkit-transition: 200ms linear; 
+  -moz-transition: 200ms linear;
+  -o-transition: 200ms linear;
+  transition: 200ms linear;
 }
+
+a.logo{
+	height: 30vh;
+	width: 30vw;
+	padding: 1vw;
+	position: relative;
+	display: inline-block;
+	opacity: 0;
+	color: white;
+	font-size: 2rem;
+}
+
+svg.close-x{
+	-webkit-transform-origin: 0 0 0;
+  position: fixed;
+  z-index: 100;
+  right: 10px;
+  top: 20px;
+  opacity: 0;
+
+	&:hover{
+		cursor: pointer;
+	}
+
+	& line{
+		stroke: #eee;
+		opacity: 0.9;
+		stroke-width: 3px;
+	}
+}
+
+/*FOOTER*/
 
 .slide-up-effect a.slider {
 	overflow: hidden;
@@ -109,43 +218,6 @@ div#header{
 	transform: translateY(-105%);
 }
 
-div#caption{
-	font-family: 'Open Sans', sans-serif;
-	font-size: 1.5em;
-	color: #ddd;
-	position: absolute;
-	z-index: 3;
-	line-height: normal;
-	width: 100vw;
-	text-align: center;
-}
-
-div#watchvid{
-	font: 400 1em 'Poiret One', sans-serif;
-	color: #ddd;
-	border: 1px solid #ddd;
-	padding: 1.5em 5em;
-	z-index: 3;
-	width: 8em;
-	text-align: center;
-	position: relative;
-	text-transform: uppercase;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	box-sizing: initial;
-	-webkit-transition: background-color 0.4s;
-	-moz-transition: background-color 0.4s;
-	transition: background-color 0.4s;
-
-	&:hover{
-		cursor: pointer;
-		background-color: #ccc;
-		border: 1px solid #000;
-		color: #000;
-	}
-}
-
 div#footerlinks{
 	width: 100vw;
 	text-align: center;
@@ -163,35 +235,25 @@ div#footerlinks{
 	}
 }
 
-a{
-	text-decoration: none;
-	color: inherit;
-	&::visited{
-		color: #ddd;
+/*REPSONSIVENESS*/
+
+@media screen and (max-width: 900px){
+
+	video#bgvideo, div#caption, video#featuredvid, 
+	#doyouknow, img#yussologo-1, div#watchvid, #footerlinks{
+		display: none !important;
 	}
-}
 
-video#featuredvid{
-	display: block;
-	z-index: 100;
-	position: absolute;
-	height: 50vh;
-	margin: 0 auto;
-	border: 1px solid #ddd;
-}
-
-div.close{
-	letter-spacing: 2px;
-	font: 300 1em 'Open Sans', sans-serif;
-	z-index: 101;
-	color:#ddd;
-	position: absolute;
-	margin: 0 auto;
-	padding: 5px;
-
-	&:hover{
-		cursor: pointer;
+	div.mobile-bg{
+		height: 50vmin;
+		width: 50vmin;
+		z-index: 1;
+		background-image: image-url('yussologo.svg');
+		position: absolute;
+		top: 0;left: 0;right: 0;bottom: 0;
+		margin: auto;
 	}
+
 }
 
 
