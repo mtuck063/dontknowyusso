@@ -27,18 +27,10 @@ $(document).ready(function(){
 	var instagram_url = "https://api.instagram.com/v1/users/478280771/media/recent/?client_id=1770a52803f4453f95898d9db37464bf";
 	endlessIGScrolling(instagram_url);
 
-	$(window).scroll( function(){
-		if($(window).scrollTop() > 50){
-			$("div#header-container").fadeIn(300);
-			$(".slide-up-effect a.slider").css({ 'color' : '#141519'});
-		}else{
-			$("div#header-container").fadeOut(300);
-			$(".slide-up-effect a.slider").css({ 'color' : '#fff'});
-		}
-	});
-
 	$("a").click(function(){
 		$("a.logo").fadeOut(300);
+		$("div#header-container").delay(300).hide();
+		$("svg.hamburger").delay(300).css({'opacity' : '1', 'z-index' : '101'});
 		$("svg.close-x").css({'opacity' : '0','z-index' : '100' });
 	});
 
@@ -197,7 +189,7 @@ function pageAnimation(){
 	  inClass               :   'fade-in',
 	  outClass              :   'fade-out',
 	  inDuration            :    1000,
-	  outDuration           :    0,
+	  outDuration           :    1,
 	  linkElement           :   '.animsition-link', 
 	  loading               :    true,
 	  loadingParentElement  :   'body', 

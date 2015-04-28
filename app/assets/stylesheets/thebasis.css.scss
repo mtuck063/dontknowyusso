@@ -60,7 +60,6 @@ div#watchvid{
 
 	&:hover{
 		cursor: pointer;
-		/*opacity: 0.5;*/
 		border: 1px solid #ffd700;
 		color: #ffd700;
 	}
@@ -71,6 +70,10 @@ a{
 	color: inherit;
 	&::visited{
 		color: #ddd;
+	}
+
+	&:focus{
+		outline-style: none;
 	}
 }
 
@@ -161,7 +164,6 @@ a.logo{
 	position: relative;
 	display: inline-block;
 	opacity: 0;
-	color: white;
 	font-size: 2rem;
 }
 
