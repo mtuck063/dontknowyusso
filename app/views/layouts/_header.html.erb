@@ -14,7 +14,7 @@
 		<%= image_tag("home_page.png", class: 'icon') %>
 		<span class="link-caption">HOME</span>
 	<%end%>
-	<%= link_to(theartist_path, class: 'animsition-link logo')  do %>
+	<%= link_to(theartist_path, class: 'animsition-link logo', data: {"loading": true})  do %>
 		<%= image_tag("yusso_page.png", class: 'icon') %>
 		<span class="link-caption">YUSSO</span>
 	<%end%>

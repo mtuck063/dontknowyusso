@@ -7,7 +7,6 @@ div#thebasis-container-1{
 	    position: absolute;
 	    margin: 0 auto;
 	    top: 1vh;left: 0;right: 0;bottom: 0;
-	    z-index: 2;
 	    opacity: 0.7;
 	}
 
@@ -15,7 +14,6 @@ div#thebasis-container-1{
 		color: #ddd;
 		font: 300 4em 'Open Sans', sans-serif;
 		text-align: center;
-		z-index: 2;
 		position: absolute;
 		width: 100vw;
 	}
@@ -23,7 +21,6 @@ div#thebasis-container-1{
 
 video#bgvideo {
 	position: fixed;
-	z-index: 1;
 	height: 100vh;
 	
 }
@@ -104,11 +101,12 @@ div.close{
 
 div#header-container{
 	background-color: #141519;
-	z-index: 100;
-	position: absolute;
+	z-index: 15;
+	position: fixed;
 	padding: 17vh 17vw;
 	height: 66vh;
 	width: 66vw;
+
 }
 
 svg.hamburger{
@@ -151,7 +149,7 @@ img.icon{
 	z-index: 1005;
 	line-height: 35vh;
 	opacity: 0;
-	  -webkit-transition: 200ms linear; 
+  -webkit-transition: 200ms linear; 
   -moz-transition: 200ms linear;
   -o-transition: 200ms linear;
   transition: 200ms linear;
@@ -239,21 +237,10 @@ div#footerlinks{
 
 /*REPSONSIVENESS*/
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 750px){
 
-	video#bgvideo, div#caption, video#featuredvid, 
-	#doyouknow, img#yussologo-1, div#watchvid, #footerlinks{
+	div#thebasis-container-1, svg.hamburger, #footerlinks, div#scroll{
 		display: none !important;
-	}
-
-	div.mobile-bg{
-		height: 50vmin;
-		width: 50vmin;
-		z-index: 1;
-		background-image: image-url('yussologo.svg');
-		position: absolute;
-		top: 0;left: 0;right: 0;bottom: 0;
-		margin: auto;
 	}
 
 }

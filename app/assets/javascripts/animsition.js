@@ -90,8 +90,8 @@
     },
 
     addLoading: function(options){
-      $(options.loadingParentElement)
-        .append('<div class="'+options.loadingClass+'"></div>');
+        $(options.loadingParentElement)
+          .append('<div class="'+options.loadingClass+'"></div>');
     },
 
     removeLoading: function(){

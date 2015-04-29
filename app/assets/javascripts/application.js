@@ -27,9 +27,10 @@ $(document).ready(function(){
 	var instagram_url = "https://api.instagram.com/v1/users/478280771/media/recent/?client_id=1770a52803f4453f95898d9db37464bf";
 	endlessIGScrolling(instagram_url);
 
-	$("a").click(function(){
+
+	$("a.logo").click(function(){
 		$("a.logo").fadeOut(300);
-		$("div#header-container").delay(300).hide();
+		$("body").append('<div class="animsition-loading"></div>');
 		$("svg.hamburger").delay(300).css({'opacity' : '1', 'z-index' : '101'});
 		$("svg.close-x").css({'opacity' : '0','z-index' : '100' });
 	});
@@ -73,12 +74,19 @@ $(document).ready(function(){
 		$("svg.hamburger").css({'opacity' : '1', 'z-index' : '101'});
 	});
 
+	if( $(window).width() < 750 ){
+		if( window.location.pathname != "/" ) {
+			window.location.replace(window.location.origin);
+		}
+	}
 	
 });
 
 window.onresize = function() {
 	start(); 
 	scaleVideo();
+
+
 };
 
 function start(){
@@ -88,6 +96,11 @@ function start(){
 	$("#featuredvid, .close").css({ 'left' : (($(window).width() - $("#featuredvid").width())/2) });
 	$("div#watchvid").css({ 'top' : (($(window).height() - $("div#caption").height())/2) + $("div#caption").height() + 30 });
 
+	if($(window).width < 750){
+		$("div#mb").show(1);
+	}else{
+		$("div#mb").hide(1);
+	}
 
 }
 
@@ -189,9 +202,9 @@ function pageAnimation(){
 	  inClass               :   'fade-in',
 	  outClass              :   'fade-out',
 	  inDuration            :    1000,
-	  outDuration           :    1,
+	  outDuration           :    300,
 	  linkElement           :   '.animsition-link', 
-	  loading               :    true,
+	  loading               :    false,
 	  loadingParentElement  :   'body', 
 	  loadingClass          :   'animsition-loading',
 	  unSupportCss          :   [],

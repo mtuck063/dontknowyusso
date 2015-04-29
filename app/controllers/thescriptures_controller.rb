@@ -1,6 +1,7 @@
 class ThescripturesController < ApplicationController
 
 	def thebasis
+    @shows = Show.all.last(3).reverse
 	end
 
 	def theartist

@@ -1,0 +1,46 @@
+<div class="mobile-landing-div">
+	<div class="mb-title">
+		YUSSO
+	</div>
+</div>
+<div class="lyrics-container-1">
+	<div class="lyrics" data-signature="- Yusso, Late Nights">
+		I used to want the world in my palm till I started watching worldstarhiphop.com <br><br>
+	</div>
+</div>
+<div class="mb-shows-container">
+	<div class="inner-mb-shows-container">
+			<div class="shows-title">Upcoming shows</div>
+		  <div id="shows-table">  
+		    <% @shows.each do |show| %>
+			    <div class="shows-row">
+			      <span class="shows-columns title"><%= show.title %></span>
+			      <span class="shows-columns date"><%= show.show_date.strftime("%A, %B %d") %></span>
+			      <span class="shows-columns time"><%= show.show_time.strftime("%l:%M%p") %></span>
+			      <span class="shows-columns location"><%= show.location %></span>
+			    </div>
+		    <% end %>
+  </div>
+	</div>
+</div>
+<div class="lyrics-container-2">
+		<div class="lyrics" data-signature="- Yusso, Something">
+		I used to want the world in my palm till I started watching worldstarhiphop.com <br><br>
+	</div>
+</div>
+<div id="mb-footer-container">
+	<%= link_to('https://www.facebook.com/dontknowyusso', target: '_blank')  do %>
+		<%= image_tag("facebook.png") %>
+	<%end%>
+	<%= link_to('http://instagram.com/dontknowyusso', target: '_blank')  do %>
+		<%= image_tag("instagram.png") %>
+	<%end%>
+	<%= link_to("https://soundcloud.com/dontknowyusso", target: '_blank')  do %>
+		<%= image_tag("soundcloud.png") %>
+	<%end%>
+	<%= link_to('https://twitter.com/dontknowyusso', target: '_blank')  do %>
+		<%= image_tag("twitter.png") %>
+	<%end%>
+</div>
+
+

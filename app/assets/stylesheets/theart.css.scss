@@ -13,9 +13,19 @@ img#music{
 	width: 350px;
 }
 
+#music-container{
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  height: 390px;
+  width: 800px;
+}
+
 .music-container-1, .music-container-2{
 	display: inline-block;
+	margin: 10px;
 	padding: 10px;
+	width: 350px;
 	background-color: #eee;
 	position: relative;
 }
@@ -60,19 +70,43 @@ span.thetitle{
 	letter-spacing: 0.15em;
 }
 
-.row{
-	max-width: 900px;
-	height: 400px;
-	position: absolute;
-	margin: auto;
-	bottom: 0; top: 0; right: 0; left: 0;
+
+@media screen and (max-width: 800px){
+
+	#music-container{
+	  height: 780px;
+	  width: 390px;
+	}
+
+	.music-container-1, .music-container-2{
+		display: block;
+		width: 350px;
+		margin: 10px auto;
+	}
+
 }
 
-.columns{
-	margin: 0 30px;
-	display: inline-block;
-}
 
+@media screen and (max-width: 450px){
+
+	img#music{
+		height: 80vmin;
+		width: 80vmin;
+	}
+	.music-container-1, .music-container-2{
+		width: 80vmin;
+	}
+
+	.song-caption1, .song-caption2{
+		font-size: 1.5rem;
+	}
+
+	#music-container{
+		height: 100vh;
+		width: 100vw;
+	}
+
+}
 
 
 
