@@ -10,39 +10,30 @@
 		height: 100vh;
 		width: 100vw;
 		background-image: image-url('blurredcity.jpg');
-	}
-
-	div.mb-title{
-		display: flex;
-		width: 100vw;
-		height: 100vh;
-		text-align: center;
-		justify-content: center;
 		color: #eee;
 		font: 300 4em 'Open Sans', sans-serif;
-		-webkit-align-items: center;
-		align-items: center;
+		line-height: 100vh;
+		text-align: center;
 	}
 
 	div.lyrics-container-1, div.lyrics-container-2{
-		height: 100vh;
+	  min-height: 100vh;
 		width: 100vw;
 		background-color: #eee;
 	}
 
 
 	div.lyrics{
-		width: 100vw;
-		height: 100vh;
+	  position: relative;
+	  top: 50%;
+	  transform: translateY(-50%);
 		text-align: center;
 		color: #777;
 		font: 300 2em 'Open Sans', sans-serif;
-		-webkit-align-items: center;
-		align-items: center;
 
 		&::before{
-			height: 30vh;
-			font: 300 6em 'Passion One', cursive;
+			height: 4.5rem;
+			font: 300 8rem 'Passion One', cursive;
 			content: '"';
 			top: 0;
 			display: block;
@@ -55,7 +46,7 @@
 	}
 
 	div.mb-shows-container{
-		height: 100vh;
+		min-height: 100vh;
 		width: 100vw;
 		background-color: #eee;
 		position: relative;
@@ -64,10 +55,10 @@
 
 	div.inner-mb-shows-container{
 		background-color: #141519;
-		margin: auto;
+		margin: 0 auto;
 		position: absolute;
 		top: 0; bottom: 0;left: 0; right: 0;
-	  height: calc(100vh - 30px);
+	  min-height: calc(100vh - 30px);
 	  width: calc(100vw - 30px);
 	  color: #eee;
 	  overflow: hidden;
@@ -78,7 +69,8 @@
 		text-align: center;
 		text-transform: uppercase;
 		letter-spacing: 2px;
-		padding: 20px;
+		padding: 20px 20px 40px;
+
 	}
 
 	div#mb-footer-container img{
@@ -93,7 +85,7 @@
 
 	div#shows-table{
 		width: 80vw !important;
-		top: 10vh !important;
+		top: 0 !important;
 		position: relative !important;
 		font-size: 0.5rem;
 
@@ -101,7 +93,8 @@
 
 	div.shows-row{
 		width: 80vw !important;
-		height: 70px !important;
+		height: auto !important;
+		margin-bottom: 15px;
 	}
 
 	.shows-columns{
@@ -134,4 +127,5 @@
 	}
 
 }
+
 

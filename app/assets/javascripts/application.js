@@ -74,6 +74,9 @@ $(document).ready(function(){
 		$("svg.hamburger").css({'opacity' : '1', 'z-index' : '101'});
 	});
 
+	$("div.inner-mb-shows-container, div.mb-shows-container").css({ 'height' : ($("div.shows-title").height() + $("div#shows-table").height() +  100) });
+	$("div.lyrics-container-1, div.lyrics-container-2").css({ 'height' : ($("div.lyrics").height() + 50) });
+
 	if( $(window).width() < 750 ){
 		if( window.location.pathname != "/" ) {
 			window.location.replace(window.location.origin);
