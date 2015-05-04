@@ -2,132 +2,136 @@
 
 @media screen and (max-width: 750px){
 
-	div#mb{
-		display: block !important;
-	}
+  div#mb{
+    display: block !important;
+  }
 
-	div.mobile-landing-div{
-		height: 100vh;
-		width: 100vw;
-		background-image: image-url('blurredcity.jpg');
-		color: #eee;
-		font: 300 4em 'Open Sans', sans-serif;
-		line-height: 100vh;
-		text-align: center;
-	}
+  div.mobile-landing-div{
+    height: 100vh;
+    width: 100vw;
+    background-image: image-url('blurredcity.jpg');
+    color: #eee;
+    font: 300 4em 'Open Sans', sans-serif;
+    line-height: 100vh;
+    text-align: center;
+  }
 
-	div.lyrics-container-1, div.lyrics-container-2{
-	  min-height: 100vh;
-		width: 100vw;
-		background-color: #eee;
-	}
+  div.lyrics-container-1, div.lyrics-container-2{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #eee;
+  }
 
 
-	div.lyrics{
-	  position: relative;
-	  top: 50%;
-	  -webkit-transform: translateY(-50%);
-	  -moz-transform: translateY(-50%);
-	  -o-transform: translateY(-50%);
-	  transform: translateY(-50%);
-		text-align: center;
-		color: #777;
-		font: 300 2em 'Open Sans', sans-serif;
+  div.lyrics{
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+         -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+    text-align: center;
+    color: #777;
+    font: 300 2em 'Open Sans', sans-serif;
 
-		&::before{
-			height: 4.5rem;
-			font: 300 8rem 'Passion One', cursive;
-			content: '"';
-			top: 0;
-			display: block;
-		}
+    &::before{	
+      height: 4.5rem;
+      font: 300 8rem 'Passion One', cursive;
+      content: '"';
+      top: 0;
+      display: block;
+    }
 
-		&::after{
-			content: attr(data-signature);
-			opacity: 0.5;
-		}
-	}
+    &::after{
+      content: attr(data-signature);
+      opacity: 0.5;
+    }
+  }
 
-	div.mb-shows-container{
-		min-height: 100vh;
-		width: 100vw;
-		background-color: #eee;
-		position: relative;
-		font-size: 0.5rem;
-	}
+  div.mb-shows-container{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #eee;
+    position: relative;
+    font-size: 0.5rem;
+  }
 
-	div.inner-mb-shows-container{
-		background-color: #141519;
-		margin: 0 auto;
-		position: absolute;
-		top: 0; bottom: 0;left: 0; right: 0;
-	  min-height: calc(100vh - 30px);
-	  width: calc(100vw - 30px);
-	  color: #eee;
-	  overflow: hidden;
-	}
+  div.inner-mb-shows-container{
+    background-color: #141519;
+    margin: 0 auto;
+    position: absolute;
+    top: 0; bottom: 0;left: 0; right: 0;
+    min-height: calc(100vh - 30px);
+    width: calc(100vw - 30px);
+    color: #eee;
+    overflow: hidden;
+  }
 
-	div.shows-title{
-		font: 300 3em 'Open Sans', sans-serif;
-		text-align: center;
-		text-transform: uppercase;
-		letter-spacing: 2px;
-		padding: 20px 20px 40px;
+  div.shows-title{
+    font: 300 3em 'Open Sans', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 20px 20px 40px;
 
-	}
+  }
 
-	div#mb-footer-container img{
-		height: 20vw;
-		width: 20vw;
-		margin: 2vw;
-	}
+  div#mb-footer-container{
+    background-color: #141519;
+  }
 
-	svg.line{
-		display: none;
-	}
+  div#mb-footer-container img{
+    height: 20vw;
+    width: 20vw;
+    margin: 2vw;
+  }
 
-	div#shows-table{
-		width: 80vw !important;
-		top: 0 !important;
-		position: relative !important;
-		font-size: 0.5rem;
+  svg.line{
+    display: none;
+  }
 
-	}
+  div#shows-table{
+    width: 80vw !important;
+    top: 0 !important;
+    position: relative !important;
+    font-size: 0.5rem;
 
-	div.shows-row{
-		width: 80vw !important;
-		height: auto !important;
-		margin-bottom: 15px;
-	}
+  }
 
-	.shows-columns{
-		height: auto !important;
-		padding-top: 5px;
-		padding-right: 0 !important;
-	}
+  div.shows-row{
+    width: 80vw !important;
+    height: auto !important;
+    margin-bottom: 15px;
+  }
 
-	.title{
-		display: initial !important;
-		font-size: 0.7rem;
-	}
+  .shows-columns{
+    height: auto !important;
+    padding-top: 5px;
+    padding-right: 0 !important;
+  }
 
-	.date{
-		width: 20%;
-		opacity: 1 !important;
-		font-weight: 300;
-	}
+  .title{
+    display: initial !important;
+    font-size: 0.7rem;
+  }
 
-	.time{
-		width: 10%;
-		font-weight: 300;
-		opacity: 1 !important;
-	}
+  .date{
+    width: 20%;
+    opacity: 1 !important;
+    font-weight: 300;
+  }
 
-	.location{
-		width: 35%;
-		font-weight: 300;
-		opacity: 1 !important;
-	}
+  .time{
+    width: 10%;
+    font-weight: 300;
+    opacity: 1 !important;
+  }
+
+  .location{
+    width: 35%;
+    font-weight: 300;
+    opacity: 1 !important;
+  }
 
 }
 

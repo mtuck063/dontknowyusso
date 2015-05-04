@@ -1,0 +1,15 @@
+.center-div-in-div{
+ 	position: absolute;
+  top: 50%;left: 50%;right: 0;bottom: 0;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.transition-200ms{
+	-webkit-transition: 200ms linear; 
+     -moz-transition: 200ms linear;
+       -o-transition: 200ms linear;
+          transition: 200ms linear;
+}

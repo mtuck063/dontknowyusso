@@ -1,0 +1,134 @@
+@import "lib.css.scss";
+
+/* HEADER */
+
+div#header-container{
+    background-image: image-url('blurredcity.jpg');
+	background-color: #141519;
+	z-index: 15;
+	position: fixed;
+	padding: 17vh 17vw;
+	height: 66vh;
+	width: 66vw;
+
+}
+
+svg.hamburger{
+  -webkit-transform-origin: 0 0 0;
+  position: fixed;
+  z-index: 100;
+  right: 10px;
+  top: 20px;
+  z-index: 101;
+	&:hover{
+		cursor: pointer;
+	}
+}
+
+svg.hamburger line{
+	stroke: #eee;
+	opacity: 0.9;
+	stroke-width: 3px;
+}
+
+img.icon{
+	@extend .transition-200ms;
+	height: 30vh;
+	width: 30vw;
+	position: relative;
+}
+
+.link-caption{
+	@extend .transition-200ms;
+	position: absolute;
+	top: 0; bottom: 0;left: 0; right: 0;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: 'Source Code Pro', sans-serif;
+	font-weight: 300;
+	font-size: 2em;
+	z-index: 1005;
+	line-height: 35vh;
+	opacity: 0;
+}
+
+a.logo{
+	height: 30vh;
+	width: 30vw;
+	padding: 1vw;
+	position: relative;
+	display: inline-block;
+	opacity: 0;
+	font-size: 2rem;
+}
+
+svg.close-x{
+	-webkit-transform-origin: 0 0 0;
+  position: fixed;
+  z-index: 100;
+  right: 10px;
+  top: 20px;
+  opacity: 0;
+
+	&:hover{
+		cursor: pointer;
+	}
+
+	& line{
+		stroke: #eee;
+		opacity: 0.9;
+		stroke-width: 3px;
+	}
+}
+
+/*FOOTER*/
+
+.slide-up-effect a.slider {
+	overflow: hidden;
+	color: #fff;
+	padding: 0 1vw;
+	cursor: pointer;
+}
+
+.slide-up-effect a.slider span {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	-webkit-transition: -webkit-transform 0.3s;
+	   -moz-transition: -moz-transform 0.3s;
+	        transition: transform 0.3s;
+}
+
+.slide-up-effect a.slider span::before {
+	position: absolute;
+	top: 100%;
+	content: attr(data-hover);
+	-webkit-transform: translate3d(0,0,0);
+	   -moz-transform: translate3d(0,0,0);
+	        transform: translate3d(0,0,0);
+}
+
+.slide-up-effect a.slider:hover span,
+.slide-up-effect a.slider:focus span {
+	-webkit-transform: translateY(-105%);
+	   -moz-transform: translateY(-105%);
+	        transform: translateY(-105%);
+}
+
+div#footerlinks{
+	width: 100vw;
+	text-align: center;
+	position: fixed;
+	bottom: 0.5vh;
+	font-family: 'Poiret One', sans-serif;
+	font-size: 1em;
+	line-height: normal;
+	overflow: hidden;
+	color: #fff;
+	z-index: 10;
+
+	a.slider{
+		color: #fff;
+	}
+}

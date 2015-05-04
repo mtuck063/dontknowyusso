@@ -1,4 +1,4 @@
-
+@import "lib.css.scss";
 
 div#theartist-container-1{
 	background-image: image-url('eben-smiling.jpg');
@@ -6,27 +6,6 @@ div#theartist-container-1{
 	height: 100vh;
 	width: 100vw;
 	position: relative;
-}
-
-.bg-zoom-in{
-	-webkit-transition: -webkit-transform 20s; 
-  -moz-transition: -moz-transform  20s;
-  -o-transition: -o-transform  20s;
-  transition: transform 20s;
-}
-
-.trans{
-	-webkit-transform : scale(1.35, 1.35);
-	-moz-transform : scale(1.35, 1.35);
-	-o-transform : scale(1.35, 1.35);
-	transform : scale(1.35, 1.35);
-}
-
-.bg-container{
-	height: 100vh;
-	width: 100vw;
-	overflow: hidden;
-	position: absolute;
 }
 
 
@@ -66,96 +45,6 @@ div.bio-2{
 	height: 400px;
 }
 
-div#followyusso-container-1{
-	background-image: image-url('blue-space-cloud.jpg');
-	background-size: cover;
-	height: 100vh;
-	width: 100vw;
-	position: fixed;
-}
-
-div#followyusso-container-2{
-	z-index: 1;
-	position: relative;
-}
-
-img.instagram-photos{
-	margin: 0 auto;
-	display: block;
-	padding-top:3rem;
-	max-width: 100vw;
-}
-
-div.instagram-caption{
-	box-sizing: initial;
-	background-color: #fff;
-	margin: 0 auto;
-	color: #777;
-	max-width: 100vw;
-	padding: 10px;
-	font: 300 1.1em 'Open Sans', sans-serif;
-	border-top: 1px solid #ddd;
-	max-width: 620px;
-	width: 100vw;
-}
-
-div#scroll{
-	position: fixed;
-	color: #fff;
-	font: 400 1em 'Poiret One', cursive;
-	left: 90%;
-	top:47%;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-}
-
-.arrows{
-	width: 60px;
-	height: 90px;
-	position: fixed;
-	left: 90%;
-	top:50%;
-	color: #fff;
-}
-
-.arrows path {
-	stroke: #fff;
-	fill: transparent;
-	stroke-width: 1px;	
-	animation: arrow 2s infinite;
-	-webkit-animation: arrow 2s infinite; 
-}
-
-@keyframes arrow
-{
-0% {opacity:0}
-40% {opacity:1}
-80% {opacity:0}
-100% {opacity:0}
-}
-
-@-webkit-keyframes arrow /*Safari and Chrome*/
-{
-0% {opacity:0}
-40% {opacity:1}
-80% {opacity:0}
-100% {opacity:0}
-}
-
-.arrows path.a1 {
-	animation-delay:-1s;
-	-webkit-animation-delay:-1s; 
-}
-
-.arrows path.a2 {
-	animation-delay:-0.5s;
-	-webkit-animation-delay:-0.5s; 
-}
-
-.arrows path.a3 {	
-	animation-delay:0s;
-	-webkit-animation-delay:0s; 
-}
 
 @media screen and (max-width: 500px){
 
@@ -176,7 +65,7 @@ div#scroll{
 	}
 
 	div#theartist-container-2{
-			display: flex;
+			display: flex !important;
 		  justify-content: center;
 		  align-items: center;
 		  top: 0;
@@ -197,16 +86,15 @@ div#scroll{
 
 		.bio-container{
 		 display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  height: 100vh;
+		  justify-content: center;
+		  align-items: center;
+		  height: 100vh;
 	}
 
 	div#theartist-container-2{
-			display: flex;
+			display: flex !important;
 		  justify-content: center;
 		  align-items: center;
-		  top: 0;
 	}
 	
 }

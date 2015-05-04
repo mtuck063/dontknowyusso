@@ -13,31 +13,29 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery-ui
+//= require jquery-ui/effect-slide
 //= require_tree .
 
 
 
 $(document).ready(function(){ 
-	pageAnimation();
+  $(".page-load-effect").hide();
+  $(".page-load-effect").delay(1000).fadeIn(500);
+  $("input#show_location").geocomplete();
 	start(); 
 	homePage();
 	scaleVideo();
 
-	var instagram_url = "https://api.instagram.com/v1/users/478280771/media/recent/?client_id=1770a52803f4453f95898d9db37464bf";
-	endlessIGScrolling(instagram_url);
-
 
 	$("a.logo").click(function(){
 		$("a.logo").fadeOut(300);
-		$("body").append('<div class="animsition-loading"></div>');
 		$("svg.hamburger").delay(300).css({'opacity' : '1', 'z-index' : '101'});
 		$("svg.close-x").css({'opacity' : '0','z-index' : '100' });
 	});
 
 	setTimeout(function(){
-		$(".bg-zoom-in").addClass("trans");
-	}, 500);
+		$(".bg-zoom-in").addClass("transform");
+	}, 1500);
 
 	$(".shows-row").mouseenter( function(){
 		$(this).children().addClass("show");
@@ -50,7 +48,7 @@ $(document).ready(function(){
 	});
 
 	$("a.logo").mouseenter( function(){
-		$($(this).children()[0]).css({'opacity' : '0.6'});
+		$($(this).children()[0]).css({'opacity' : '0.75'});
 		$($(this).children()[1]).css({'opacity' : '1'});
 	});
 
@@ -62,14 +60,14 @@ $(document).ready(function(){
 	$("div#header-container").hide();
 
 	$("svg.hamburger").click(function(){
-		$("div#header-container").show("slide", { direction: "up" }, 1000);
+		$("div#header-container").show("slide", { direction: "up" }, 500);
 		$("a.logo").css({'opacity' : '1'});
 		$(this).css({'opacity' : '0','z-index' : '100' });
 		$("svg.close-x").css({'opacity' : '1', 'z-index' : '101'});
 	});
 
 	$("svg.close-x").click(function(){
-		$("div#header-container").hide("slide", { direction: "up" }, 1000);
+		$("div#header-container").hide("slide", { direction: "up" }, 500);
 		$(this).css({'opacity' : '0', 'z-index' : '100'});
 		$("svg.hamburger").css({'opacity' : '1', 'z-index' : '101'});
 	});
@@ -85,19 +83,15 @@ $(document).ready(function(){
 	
 });
 
+window.onload = function() {}
+
 window.onresize = function() {
 	start(); 
 	scaleVideo();
-
-
 };
 
 function start(){
 	$("#doyouknow").delay(1500).fadeOut(500);
-	centerInWindowVertical("div#caption");
-	centerInWindowVertical("#featuredvid, .close");
-	$("#featuredvid, .close").css({ 'left' : (($(window).width() - $("#featuredvid").width())/2) });
-	$("div#watchvid").css({ 'top' : (($(window).height() - $("div#caption").height())/2) + $("div#caption").height() + 30 });
 
 	if($(window).width < 750){
 		$("div#mb").show(1);
@@ -110,18 +104,18 @@ function start(){
 function homePage(){
 
 	// Fade in effect on landing page text
-	$("div#thebasis-container-1 img").hide();
-	$("#doyouknow").hide();
-	// console.log($("#doyouknow"));
-	$("#doyouknow").fadeIn(1500);
-	$("#doyouknow").delay(1500).fadeOut(500);
-	$("div#thebasis-container-1 img").delay(5000).fadeIn(1500);
+	$("div#thebasis-container #yussotext, #doyouknow").hide();
+	$("#doyouknow").delay(1500).fadeIn(1000);
+	$("#doyouknow").delay(1000).fadeOut(500);
+	$("div#thebasis-container #yussotext").delay(5000).fadeIn(1500);
 
 	// Hide the home page music video 
 	$("#featuredvid, .close").hide();
 
 	// Fade in the home page music video when clicked
 	$("#watchvid").click(function(){
+		$(".close").css({ 'left' : (($(window).width() - $("#featuredvid").width())/2) });
+		$(".close").css({ 'top' : (($(window).height() - $("#featuredvid").height())/2) });
 		$("#featuredvid").fadeIn(500);
 		$(".close").show();
 		$("#featuredvid").get(0).play();
@@ -136,11 +130,6 @@ function homePage(){
 		$("#bgvideo").get(0).play();
 	});
 
-}
-
-function centerInWindowVertical(element){
-	$(element).css({ 'top' : (($(window).height() - $(element).height())/2) });
-	return false;
 }
 
 function scaleVideo() {
@@ -169,56 +158,6 @@ function scaleVideo() {
 	return false;
 }
 
-function endlessIGScrolling(url){
-	var fatesabitch = true;
-	$.ajax({
-        url: url,
-        dataType: "jsonp", 
-        cache: false,
-        success: function (data) {
-        	url = data.pagination.next_url;
-        	for(var i = 0; i < data.data.length; i++){
-        		if( typeof data.data[i].videos == "undefined" ){
-        			$("#followyusso-container-2").append("<img class='instagram-photos' src='"
-        				+ data.data[i].images.standard_resolution.url + "'>");
-        			$("#followyusso-container-2").append("<div class='instagram-caption'>"+ data.data[i].caption.text +"</div>");
-        		}
-        	}
-
-		   	$(window).scroll( function(){ 
-				if($(window).scrollTop() >= $(document).height() - $(window).height() - 500 && fatesabitch){
-					endlessIGScrolling(url);
-					fatesabitch = false;
-				}else if($(window).scrollTop() >=  $(window).height()){
-					$("#scroll").fadeOut(1500);
-					$(".arrows").fadeOut(1500);
-				}
-			});
-		}
-	});	
-	return false;
-}
-
-function pageAnimation(){
-
-	$(".animsition").animsition({
-	  inClass               :   'fade-in',
-	  outClass              :   'fade-out',
-	  inDuration            :    1000,
-	  outDuration           :    300,
-	  linkElement           :   '.animsition-link', 
-	  loading               :    false,
-	  loadingParentElement  :   'body', 
-	  loadingClass          :   'animsition-loading',
-	  unSupportCss          :   [],
-	  overlay               :   false,
-	  overlayClass          :   'animsition-overlay-slide',
-	  overlayParentElement  :   'body',
-	  opacity 							: 	1
-	});
-
-
-};
 
 
 

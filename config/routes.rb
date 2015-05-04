@@ -5,11 +5,8 @@ Rails.application.routes.draw do
   resources :shows
 
   root "thescriptures#thebasis"
-
   get "/yusso" => "thescriptures#theartist", as: 'theartist'
   get "/music" => "thescriptures#theart", as: 'theart'
-  get "/contact" => "thescriptures#contact", as: 'contact'
-  get "/newsfeed" => "thescriptures#followyusso", as: 'followyusso'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

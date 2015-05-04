@@ -1,19 +1,18 @@
-<div id="thebasis-container-1" class="animsition">
+<div id="thebasis-container" class="page-load-effect">
 
 	<%= video_tag ['nominepatris.mp4','nominepatris.webm','nominepatris.ogv'], 
 						id: 'bgvideo', autoplay: true , loop: true, muted: true %>
 
 	<div id="doyouknow">Do you know?</div>
-	<%= image_tag 'yussowhite.svg', alt: 'Yusso Logo', id: 'yussologo-1' %>
+	<div id="yussotext">Y&#217;$$&#211;</div>
 
 	<div id="caption">
 		Born in the wild.<br>
 		Raised by aliens.<br>
-		Sent to school with humans...
-	</div>
-
-	<div id="watchvid" class="not-mobile-friendly">
-		Watch Video
+		Sent to school with humans...<br><br>
+		<div id="watchvid" class="not-mobile-friendly">
+			Watch Video
+		</div>
 	</div>
 
 	<%= video_tag ['makeamove.mp4','makeamove.webm','makeamove.ogv', ], 

@@ -1,3 +1,5 @@
+@import "lib.css.scss";
+
 div#shows-container-1{
 	background-image: image-url('gasstation.jpg');
 	background-size: cover;
@@ -6,11 +8,9 @@ div#shows-container-1{
 }
 
 div.form{
-	position: absolute;
+	@extend .center-div-in-div;
 	width: 500px;
 	height: 300px;
-	top: 0; bottom: 0;left: 0; right: 0;
-	margin: auto;
 	background-color: #fff;
 }
 
