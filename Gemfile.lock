@@ -1,5 +1,6 @@
-PATH
+GIT
   remote: ./gem/neat
+  revision: 0ae93bd69f3bf339078611e2aa7d68ad7d1a6ae8
   specs:
     neat (1.7.2)
       bourbon (>= 4.0)
