@@ -10,20 +10,24 @@
 </svg>
 
 <div id="header-container">
-	<%= link_to(root_path, class: 'animsition-link logo')  do %>
-		<%= image_tag("landing_page.png", class: 'icon') %>
-		<span class="link-caption">HOME</span>
-	<%end%>
-	<%= link_to(theartist_path, class: 'animsition-link logo', data: {"loading": true})  do %>
-		<%= image_tag("yusso_page.png", class: 'icon') %>
-		<span class="link-caption">Y&#217;$$&#211;</span>
-	<%end%>
-	<%= link_to(theart_path, class: 'animsition-link logo')  do %>
-		<%= image_tag("music_page.png", class: 'icon') %>
-		<span class="link-caption">MUSIC</span>
-	<%end%>
-	<%= link_to(shows_path, class: 'animsition-link logo')  do %>
-		<%= image_tag("shows_page.png", class: 'icon') %>
-		<span class="link-caption">SHOWS</span>
-	<%end%>
+
+	<div class="grid">
+		<%= link_to(root_path, class: 'header-link')  do %>
+			<%= image_tag("landing_page.png", class: 'icon') %>
+			<span class="link-caption">HOME</span>
+		<%end%>
+		<%= link_to(theartist_path, class: 'header-link')  do %>
+			<%= image_tag("yusso_page.png", class: 'icon') %>
+			<span class="link-caption">Y&#217;$$&#211;</span>
+		<%end%>
+		<%= link_to(theart_path, class: 'header-link')  do %>
+			<%= image_tag("music_page.png", class: 'icon') %>
+			<span class="link-caption">MUSIC</span>
+		<%end%>
+		<%= link_to(shows_path, class: 'header-link')  do %>
+			<%= image_tag("shows_page.png", class: 'icon') %>
+			<span class="link-caption">SHOWS</span>
+		<%end%>
+	</div>
+	
 </div>

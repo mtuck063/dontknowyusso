@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery-ui/effect-slide
+//= require jquery-ui
 //= require_tree .
 
 
@@ -27,8 +27,8 @@ $(document).ready(function(){
 	scaleVideo();
 
 
-	$("a.logo").click(function(){
-		$("a.logo").fadeOut(300);
+	$("a.header-link").click(function(){
+		$("a.header-link").fadeOut(300);
 		$("svg.hamburger").delay(300).css({'opacity' : '1', 'z-index' : '101'});
 		$("svg.close-x").css({'opacity' : '0','z-index' : '100' });
 	});
@@ -47,27 +47,25 @@ $(document).ready(function(){
 		$("svg.line").css({'width' : '5%'});
 	});
 
-	$("a.logo").mouseenter( function(){
-		$($(this).children()[0]).css({'opacity' : '0.75'});
+	$("a.header-link").mouseenter( function(){
 		$($(this).children()[1]).css({'opacity' : '1'});
 	});
 
-	$("a.logo").mouseleave( function(){
-		$($(this).children()[0]).css({'opacity' : '1'});
+	$("a.header-link").mouseleave( function(){
 		$($(this).children()[1]).css({'opacity' : '0'});
 	});
 
 	$("div#header-container").hide();
 
 	$("svg.hamburger").click(function(){
-		$("div#header-container").show("slide", { direction: "up" }, 500);
-		$("a.logo").css({'opacity' : '1'});
+		$("div#header-container").show("slide", { direction: "left" }, 250);
+		$("a.header-link").css({'opacity' : '1'});
 		$(this).css({'opacity' : '0','z-index' : '100' });
 		$("svg.close-x").css({'opacity' : '1', 'z-index' : '101'});
 	});
 
 	$("svg.close-x").click(function(){
-		$("div#header-container").hide("slide", { direction: "up" }, 500);
+		$("div#header-container").hide("slide", { direction: "up" }, 250);
 		$(this).css({'opacity' : '0', 'z-index' : '100'});
 		$("svg.hamburger").css({'opacity' : '1', 'z-index' : '101'});
 	});
@@ -80,7 +78,13 @@ $(document).ready(function(){
 			window.location.replace(window.location.origin);
 		}
 	}
-	
+
+	$(window).scroll( function(){ 
+	if($(window).scrollTop() >=  250){		
+			$("#scroll").fadeOut(500);		
+		}		
+	});		
+
 });
 
 window.onload = function() {}
@@ -92,6 +96,8 @@ window.onresize = function() {
 
 function start(){
 	$("#doyouknow").delay(1500).fadeOut(500);
+  $(".grid").css({'height': $("a.header-link").height() * 2 });
+  $(".link-caption").css({'line-height': $("img.icon").height() + "px", 'height': $("img.icon").height() + "px"});
 
 	if($(window).width < 750){
 		$("div#mb").show(1);

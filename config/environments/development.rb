@@ -39,16 +39,4 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  Instagram.configure do |config|
-    config.client_id = ENV['IG_CLIENT_ID']
-    config.client_secret = ENV['IG_CLIENT_SECRET']
-  end
-  
-  client = Twitter::REST::Client.new do |config|
-    config.consumer_key        = ENV["CONSUMER_KEY"]
-    config.consumer_secret     = ENV["CONSUMER_SECRET"]
-    config.access_token        = ENV["ACCESS_TOKEN"]
-    config.access_token_secret = ENV["ACCESS_SECRET"]
-  end
-
 end

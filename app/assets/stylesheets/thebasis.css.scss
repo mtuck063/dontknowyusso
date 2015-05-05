@@ -10,7 +10,7 @@ div#loading-screen{
 	position: fixed;
 
 	& div{
-		@extend .center-div-in-div;
+		@include center-div-in-div;
 		font: 400 15rem 'Source Code Pro', sans-serif;
 		background-color: #aaa;
 		color: #fffaf0;
@@ -50,7 +50,7 @@ video#bgvideo {
 }
 
 div#caption{
-	@extend .center-div-in-div;
+	@include center-div-in-div;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.5em;
 	color: #fffaf0;
@@ -60,7 +60,7 @@ div#caption{
 }
 
 div#watchvid{
-	@extend .transition-200ms;
+	@include transition-200ms;
 	font: 400 1rem 'Poiret One', sans-serif;
 	color: #fffaf0;
 	border: 1px solid #fffaf0;
@@ -81,7 +81,7 @@ div#watchvid{
 }
 
 video#featuredvid{
-	@extend .center-div-in-div;
+	@include center-div-in-div;
 	display: block;
 	height: 50vh;
 	border: 1px solid #fffaf0;

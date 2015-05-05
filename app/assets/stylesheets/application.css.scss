@@ -10,9 +10,20 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
+
+@import "bourbon";
+@import "neat";
+@import "layout.css.scss";
+@import "lib.css.scss";
+@import "loading-screen.css.scss";
+@import "mobile.css.scss";
+@import "shows.css.scss";
+@import "theart.css.scss";
+@import "theartist.css.scss";
+@import "thebasis.css.scss";
+
 
 /* GLOBAL STYLING */
 
@@ -84,18 +95,18 @@ div#scroll{
 
 @keyframes arrow
 {
-0% {opacity:0}
-40% {opacity:1}
-80% {opacity:0}
-100% {opacity:0}
+	0% {opacity:0}
+	40% {opacity:1}
+	80% {opacity:0}
+	100% {opacity:0}
 }
 
 @-webkit-keyframes arrow /*Safari and Chrome*/
 {
-0% {opacity:0}
-40% {opacity:1}
-80% {opacity:0}
-100% {opacity:0}
+	0% {opacity:0}
+	40% {opacity:1}
+	80% {opacity:0}
+	100% {opacity:0}
 }
 
 .arrows path.a1 {
@@ -113,26 +124,6 @@ div#scroll{
 	-webkit-animation-delay:0s; 
 }
 
-/* LOADING SCREEN */
-
-div#loading-screen{
-	height: 100vh;
-	width: 100vw;
-	z-index: 10;
-	background-color: #fffaf0;
-	position: fixed;
-
-	& div{
-		@extend .center-div-in-div;
-		font: 400 15rem 'Source Code Pro', sans-serif;
-		background-color: #aaa;
-		color: #fffaf0;
-		width: 75vw;
-		height: 40vh;
-		line-height: 40vh;
-		text-align: center;
-	}
-}
 
 /*REPSONSIVENESS*/
 

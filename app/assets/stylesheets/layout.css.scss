@@ -2,14 +2,18 @@
 
 /* HEADER */
 
+div.grid{
+	@include outer-container(70rem);
+	@include center-div-vertically;
+}
+
 div#header-container{
-  backgrosund-image: image-url('blurredcity.jpg');
+  background-image: image-url('blurredcity.jpg');
 	background-color: #141519;
-	z-index: 15;
+	z-index: 2;
 	position: fixed;
-	padding: 17vh 17vw;
-	height: 66vh;
-	width: 66vw;
+	height: 100vh;
+	width: 100vw;
 
 }
 
@@ -32,35 +36,33 @@ svg.hamburger line{
 }
 
 img.icon{
-	@extend .transition-200ms;
-	height: 30vh;
-	width: 30vw;
-	position: relative;
+	@include transition-200ms;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .link-caption{
-	@extend .transition-200ms;
+	@include transition-200ms;
 	position: absolute;
 	top: 0; bottom: 0;left: 0; right: 0;
+	background-color: rgba(0,0,0,0.5);
 	text-align: center;
 	color: #fff;
 	text-transform: uppercase;
 	font-family: 'Source Code Pro', sans-serif;
 	font-weight: 300;
-	font-size: 2em;
+	font-size: 3rem;
 	z-index: 1005;
-	line-height: 35vh;
 	opacity: 0;
 }
 
-a.logo{
-	height: 30vh;
-	width: 30vw;
-	padding: 1vw;
+a.header-link{
+	@include span-columns(5.8);
 	position: relative;
 	display: inline-block;
 	opacity: 0;
 	font-size: 2rem;
+	margin-bottom: 1rem;
 }
 
 svg.close-x{
@@ -126,7 +128,7 @@ div#footerlinks{
 	line-height: normal;
 	overflow: hidden;
 	color: #fff;
-	z-index: 10;
+	z-index: 1;
 
 	a.slider{
 		color: #fff;
