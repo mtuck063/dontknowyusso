@@ -39,10 +39,7 @@ div.form{
 	vertical-align: middle;
 	height: 89px;
 	padding-right: 20px;
-	-webkit-transition: 350ms linear; 
-  -moz-transition: 350ms linear;
-  -o-transition: 350ms linear;
-  transition: 350ms linear;
+	@include prefixer(transition, 350ms linear);
 }
 
 .title{
@@ -78,10 +75,7 @@ svg.line{
 	transform-origin: 0 0;
 	opacity: 0.85;
 	width: 5%;
-	-webkit-transition: 500ms linear; 
-  -moz-transition: 500ms linear;
-  -o-transition: 500ms linear;
-  transition: 500ms linear;
+	@include prefixer(transition, 500ms linear);
 }
 
 svg.line line{

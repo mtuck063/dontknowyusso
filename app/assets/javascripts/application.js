@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery-ui
+//= require jquery-ui/effect-slide
 //= require_tree .
 
 
@@ -95,8 +95,8 @@ window.onresize = function() {
 };
 
 function start(){
+
 	$("#doyouknow").delay(1500).fadeOut(500);
-  $(".grid").css({'height': $("a.header-link").height() * 2 });
   $(".link-caption").css({'line-height': $("img.icon").height() + "px", 'height': $("img.icon").height() + "px"});
 
 	if($(window).width < 750){

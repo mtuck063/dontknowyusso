@@ -2,10 +2,20 @@
 
 /* HEADER */
 
+$window-dimension: 16/9 !global;
+
 div.grid{
 	@include outer-container(70rem);
 	@include center-div-vertically;
+	height: calc( ((0.45 * 70rem)/#{$window-dimension} * 2) + 2rem);
 }
+
+@media screen and (max-width: 70rem){
+	div.grid{
+		height: calc( ((0.45 * 100vw)/#{$window-dimension} * 2) + 2rem);
+	}
+}
+
 
 div#header-container{
   background-image: image-url('blurredcity.jpg');
@@ -57,7 +67,7 @@ img.icon{
 }
 
 a.header-link{
-	@include span-columns(5.8);
+	@include span-columns(6);
 	position: relative;
 	display: inline-block;
 	opacity: 0;
@@ -106,16 +116,12 @@ svg.close-x{
 	position: absolute;
 	top: 100%;
 	content: attr(data-hover);
-	-webkit-transform: translate3d(0,0,0);
-	   -moz-transform: translate3d(0,0,0);
-	        transform: translate3d(0,0,0);
+	@include prefixer(transform, translate3d(0,0,0));
 }
 
 .slide-up-effect a.slider:hover span,
 .slide-up-effect a.slider:focus span {
-	-webkit-transform: translateY(-105%);
-	   -moz-transform: translateY(-105%);
-	        transform: translateY(-105%);
+	@include prefixer(transform, translateY(-105%));
 }
 
 div#footerlinks{

@@ -11,21 +11,12 @@
  * file per style scope.
  *
  *= require_self
+ *= require_tree .
  */
 
-@import "bourbon";
-@import "neat";
-@import "layout.css.scss";
-@import "lib.css.scss";
-@import "loading-screen.css.scss";
-@import "mobile.css.scss";
-@import "shows.css.scss";
-@import "theart.css.scss";
-@import "theartist.css.scss";
-@import "thebasis.css.scss";
-
-
 /* GLOBAL STYLING */
+
+@import "lib.css.scss";
 
 body{
  	margin: 0;
@@ -60,10 +51,7 @@ a{
 }
 
 .transform{
-	-webkit-transform: scale(1.35, 1.35);
-	   -moz-transform: scale(1.35, 1.35);
-	     -o-transform: scale(1.35, 1.35);
-	        transform: scale(1.35, 1.35);
+	@include prefixer(transform, scale(1.35, 1.35));
 }
 
 div#scroll{
@@ -89,8 +77,7 @@ div#scroll{
 	stroke: #fff;
 	fill: transparent;
 	stroke-width: 1px;	
-	animation: arrow 2s infinite;
-	-webkit-animation: arrow 2s infinite; 
+	@include prefixer(animation, arrow 2s infinite);
 }
 
 @keyframes arrow
@@ -101,7 +88,7 @@ div#scroll{
 	100% {opacity:0}
 }
 
-@-webkit-keyframes arrow /*Safari and Chrome*/
+@-webkit-keyframes arrow
 {
 	0% {opacity:0}
 	40% {opacity:1}
@@ -110,18 +97,15 @@ div#scroll{
 }
 
 .arrows path.a1 {
-	animation-delay:-1s;
-	-webkit-animation-delay:-1s; 
+	@include prefixer(animation-delay, -1s);
 }
 
 .arrows path.a2 {
-	animation-delay:-0.5s;
-	-webkit-animation-delay:-0.5s; 
+	@include prefixer(animation-delay, -0.5s);
 }
 
 .arrows path.a3 {	
-	animation-delay:0s;
-	-webkit-animation-delay:0s; 
+	@include prefixer(animation-delay, 0s);
 }
 
 

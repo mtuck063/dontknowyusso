@@ -1,26 +1,56 @@
 /* LIBARY OF MIXINS */
 
+$window-dimension: 16/9;
+
 @mixin center-div-in-div{
  	position: absolute;
   top: 50%;left: 50%;right: 0;bottom: 0;
-  -webkit-transform: translate(-50%,-50%);
-     -moz-transform: translate(-50%,-50%);
-       -o-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+  @include prefixer(transform, translate(-50%, -50%));
 }
 
 @mixin center-div-vertically{
  	position: absolute;
   top: 50%;left: 0;right: 0;bottom: 0;
-  -webkit-transform: translateY(-50%);
-     -moz-transform: translateY(-50%);
-       -o-transform: translateY(-50%);
-          transform: translateY(-50%);
+  @include prefixer(transform, translateY(-50%));
 }
 
 @mixin transition-200ms{
-	-webkit-transition: 200ms linear; 
-     -moz-transition: 200ms linear;
-       -o-transition: 200ms linear;
-          transition: 200ms linear;
+	@include prefixer(transition, 200ms linear);
+}
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+@mixin outer-container($local-max-width: 70rem) {
+  @include clearfix;
+  max-width: $local-max-width;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin fill-parent() {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@mixin span-columns($span, $margin: 1.5%) {
+	float: left;
+  margin-left: $margin;
+  margin-right: $margin;
+  width: percentage($span / 12 - 0.03) ;
+}
+
+@mixin prefixer($property, $value) {
+  -webkit-#{$property}: $value;
+	   -moz-#{$property}: $value;
+	    -ms-#{$property}: $value;
+	     -o-#{$property}: $value;
+	         #{$property}: $value;
 }

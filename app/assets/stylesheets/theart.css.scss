@@ -9,16 +9,16 @@ img#music{
 	margin: 0 auto;
 	display: block;
 	opacity: 0.85;
-	height: 350px;
-	width: 350px;
+	height: 370px;
+	width: 370px;
 }
 
 #music-container{
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
-  height: 390px;
-  width: 800px;
+  height: 410px;
+  width: 825px;
 }
 
 .music-container-1, .music-container-2{
@@ -72,7 +72,7 @@ span.thetitle{
 }
 
 
-@media screen and (max-width: 800px){
+/*@media screen and (max-width: 800px){
 
 	#music-container{
 	  height: 780px;
@@ -107,7 +107,7 @@ span.thetitle{
 		width: 100vw;
 	}
 
-}
+}*/
 
 
 
