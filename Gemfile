@@ -3,8 +3,6 @@ ruby '2.2.1'
 
 gem 'rails', '~> 4.2.0.beta4'
 gem 'thin'
-gem 'bourbon'
-gem 'neat', :git => "./gem/neat"
 gem 'sass'
 gem 'unicorn-worker-killer'
 gem 'pg'
