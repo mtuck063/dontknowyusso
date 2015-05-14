@@ -58,14 +58,14 @@ $(document).ready(function(){
 	$("div#header-container").hide();
 
 	$("svg.hamburger").click(function(){
-		$("div#header-container").show("slide", { direction: "left" }, 250);
+		$("div#header-container").fadeIn(200);
 		$("a.header-link").css({'opacity' : '1'});
 		$(this).css({'opacity' : '0','z-index' : '100' });
 		$("svg.close-x").css({'opacity' : '1', 'z-index' : '101'});
 	});
 
 	$("svg.close-x").click(function(){
-		$("div#header-container").hide("slide", { direction: "up" }, 250);
+		$("div#header-container").fadeOut(200);
 		$(this).css({'opacity' : '0', 'z-index' : '100'});
 		$("svg.hamburger").css({'opacity' : '1', 'z-index' : '101'});
 	});

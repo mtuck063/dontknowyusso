@@ -8,7 +8,7 @@ div#shows-container-1{
 }
 
 div.form{
-	@include center-div-in-div;
+	@include center;
 	width: 500px;
 	height: 300px;
 	background-color: #fff;

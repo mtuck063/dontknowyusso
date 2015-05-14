@@ -6,7 +6,7 @@ $window-dimension: 16/9 !global;
 
 div.grid{
 	@include outer-container(70rem);
-	@include center-div-vertically;
+	@include center-vertically;
 	height: calc( ((0.45 * 70rem)/#{$window-dimension} * 2) + 2rem);
 }
 
@@ -24,7 +24,6 @@ div#header-container{
 	position: fixed;
 	height: 100vh;
 	width: 100vw;
-
 }
 
 svg.hamburger{
@@ -46,13 +45,13 @@ svg.hamburger line{
 }
 
 img.icon{
-	@include transition-200ms;
+	@include transition;
 	width: 100%;
 	box-sizing: border-box;
 }
 
 .link-caption{
-	@include transition-200ms;
+	@include transition;
 	position: absolute;
 	top: 0; bottom: 0;left: 0; right: 0;
 	background-color: rgba(0,0,0,0.5);
@@ -67,7 +66,7 @@ img.icon{
 }
 
 a.header-link{
-	@include span-columns(6);
+	@include span-columns(6, 2%);
 	position: relative;
 	display: inline-block;
 	opacity: 0;

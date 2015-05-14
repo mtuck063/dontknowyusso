@@ -2,21 +2,22 @@
 
 $window-dimension: 16/9;
 
-@mixin center-div-in-div{
- 	position: absolute;
+@mixin center{
+  position: absolute;
   top: 50%;left: 50%;right: 0;bottom: 0;
   @include prefixer(transform, translate(-50%, -50%));
 }
 
-@mixin center-div-vertically{
- 	position: absolute;
+@mixin center-vertically{
+  position: absolute;
   top: 50%;left: 0;right: 0;bottom: 0;
   @include prefixer(transform, translateY(-50%));
 }
 
-@mixin transition-200ms{
-	@include prefixer(transition, 200ms linear);
-}
+@mixin transition($time: 200ms){
+  $time: if(unitless($time), $time * 1ms, $time);
+  @include prefixer(transition, $time linear);
+} 
 
 @mixin clearfix {
   &::after {
@@ -40,17 +41,24 @@ $window-dimension: 16/9;
   box-sizing: border-box;
 }
 
-@mixin span-columns($span, $margin: 1.5%) {
-	float: left;
-  margin-left: $margin;
-  margin-right: $margin;
-  width: percentage($span / 12 - 0.03) ;
+@mixin span-columns($span, $margin: 1.5) {
+  float: left;
+  $margin: strip-units($margin);
+  margin-left: $margin * 1%;
+  margin-right: $margin * 1%;
+  $gutter: $margin / 100.0;
+  $gutter: strip-units($gutter);
+  width: percentage($span / 12 - ($gutter * 2)) ;
 }
 
 @mixin prefixer($property, $value) {
   -webkit-#{$property}: $value;
-	   -moz-#{$property}: $value;
-	    -ms-#{$property}: $value;
-	     -o-#{$property}: $value;
-	         #{$property}: $value;
+     -moz-#{$property}: $value;
+      -ms-#{$property}: $value;
+       -o-#{$property}: $value;
+          #{$property}: $value;
+}
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
 }
