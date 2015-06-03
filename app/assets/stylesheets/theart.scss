@@ -1,0 +1,75 @@
+@import "lib";
+
+div#theart-container-1{
+	background-image: image-url('talkingtrees.jpg');
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+}
+
+img#music{
+	margin: 0 auto;
+	display: block;
+	opacity: 0.85;
+	height: 370px;
+	width: 370px;
+}
+
+section#music{
+  @include outer-container(70rem);
+  padding-top: 5vh;
+}
+
+.music-container{
+  @include span-columns(4, 3);
+  margin: 1.5%;
+  display: inline-block;
+  border: 0.5rem solid #fff;
+  position: relative;
+
+  img.cover-art{
+  	display: block;
+  	width: 100%;	
+  }
+
+  &:after{
+		position: absolute;
+		bottom: 2rem;left: 0; right: 0;
+		text-align: center;
+		color: #fff;
+		text-transform: uppercase;
+		font-family: 'Poiret One', cursive;
+		font-size: 2vw;
+		content: attr(data-song-caption);
+		text-shadow: 1px 1px #000;
+  }
+
+  img.playbutton, img.pausebutton{
+  	display: none;
+		position: absolute;
+		top: 0; bottom: 0;left: 0; right: 0;
+		margin: auto;
+		height: 50px;
+		width: 50px;
+  }
+
+  img.pausebutton{
+		width: 20px;
+	}
+
+	&:hover{
+		cursor: pointer;
+	}
+
+}
+
+span.thetitle{
+	display: block;
+	color: #fff;
+	font: 300 3em 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	width: 100vw;
+	text-align: center;
+	letter-spacing: 0.15em;
+}
+

@@ -2,32 +2,16 @@
 	<div id="theart-container-1" class="page-load-effect bg-zoom-in"></div>
 </div>
 		
-<div id="music-container" class="page-load-effect">
-	<span class="music-container-1">
-		<%= image_tag 'ebensmoking.jpg', id: 'music' %>
-		<%= image_tag 'playbutton.png', class: 'playbutton1' %>
-		<%= image_tag 'paused-button.png', class: 'pausebutton1' %>
-		<span class="song-caption1"> Everyday/Live the Life</span>
-	</span>
-	<span class="music-container-2">
-		<%= image_tag 'darkness.jpg', id: 'music' %>
-		<%= image_tag 'playbutton.png', class: 'playbutton2' %>
-		<%= image_tag 'paused-button.png', class: 'pausebutton2' %>
-		<span class="song-caption2"> Make a Move</span>
-	</span>
-</div>
+<section id="music" class="page-load-effect">
+	<% @music.each do |m| %>
+		<span class="music-container" data-song-caption="<%= m['name']%>" >
+			<%= audio_tag m["song"], autoplay: false, controls: false, class: 'song' %>
+			<%= image_tag m["image"], class: 'cover-art' %>
+			<%= image_tag 'playbutton.png', class: 'playbutton' %>
+			<%= image_tag 'paused-button.png', class: 'pausebutton' %>
+		</span>
+	<% end %>
+</section>
+
 
 <%= render 'layouts/footer' %>
-
-<%= audio_tag("everyday.wav", autoplay: false, controls: false, class: 'song1' )  %>
-<%= audio_tag("makeamove.mp3", autoplay: false, controls: false, class: 'song2')  %>
-
-
-
-
-
-
-
-
-
-

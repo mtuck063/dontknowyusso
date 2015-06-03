@@ -1,0 +1,135 @@
+@import url(http://fonts.googleapis.com/css?family=Passion+One);
+@import "lib";
+
+@media screen and (max-width: 750px){
+
+  div#mb{
+    display: block !important;
+  }
+
+  div.mobile-landing-div{
+    height: 100vh;
+    width: 100vw;
+    background-image: image-url('blurredcity.jpg');
+    color: #eee;
+    font: 400 3.5rem 'Source Code Pro', sans-serif;
+    line-height: 100vh;
+    text-align: center;
+  }
+
+  div.lyrics-container-1, div.lyrics-container-2{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #eee;
+    position: relative;
+  }
+
+
+  div.lyrics{
+    @include center-vertically;
+    text-align: center;
+    color: #777;
+    font: 300 2em 'Open Sans', sans-serif;
+
+    &::before{	
+      height: 4.5rem;
+      font: 300 8rem 'Passion One', cursive;
+      content: '"';
+      top: 0;
+      display: block;
+    }
+
+    &::after{
+      content: attr(data-signature);
+      opacity: 0.5;
+    }
+  }
+
+  div.mb-shows-container{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #eee;
+    position: relative;
+    font-size: 0.5rem;
+  }
+
+  div.inner-mb-shows-container{
+    background-color: #141519;
+    margin: 0 auto;
+    position: absolute;
+    top: 0; bottom: 0;left: 0; right: 0;
+    min-height: calc(100vh - 30px);
+    width: calc(100vw - 30px);
+    color: #eee;
+    overflow: hidden;
+  }
+
+  div.shows-title{
+    font: 300 3em 'Open Sans', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 20px 20px 40px;
+
+  }
+
+  div#mb-footer-container{
+    background-color: #141519;
+  }
+
+  div#mb-footer-container img{
+    height: 20vw;
+    width: 20vw;
+    margin: 2vw;
+  }
+
+  svg.line{
+    display: none;
+  }
+
+  div#shows-table{
+    width: 80vw !important;
+    top: 0 !important;
+    position: relative !important;
+    font-size: 0.5rem;
+
+  }
+
+  div.shows-row{
+    width: 80vw !important;
+    height: auto !important;
+    margin-bottom: 15px;
+  }
+
+  .shows-columns{
+    height: auto !important;
+    padding-top: 5px;
+    padding-right: 0 !important;
+  }
+
+  .title{
+    display: initial !important;
+    font-size: 0.7rem;
+  }
+
+  .date{
+    width: 20%;
+    opacity: 1 !important;
+    font-weight: 300;
+  }
+
+  .time{
+    width: 10%;
+    font-weight: 300;
+    opacity: 1 !important;
+  }
+
+  .location{
+    width: 35%;
+    font-weight: 300;
+    opacity: 1 !important;
+  }
+
+}
+
+

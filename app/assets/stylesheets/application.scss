@@ -1,0 +1,129 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+/* GLOBAL STYLING */
+
+@import "lib";
+
+body{
+ 	margin: 0;
+ 	overflow-x: hidden;
+	background-color: #fffaf0;
+ }
+
+a{
+	text-decoration: none;
+	color: inherit;
+	&::visited{
+		color: #fffaf0;
+	}
+
+	&:focus{
+		outline-style: none;
+	}
+}
+
+.bg-container{
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	position: absolute;
+}
+
+.bg-zoom-in{
+	-webkit-transition: -webkit-transform 20s; 
+     -moz-transition: -moz-transform  20s;
+       -o-transition: -o-transform  20s;
+          transition: transform 20s;
+}
+
+.transform{
+	@include prefixer(transform, scale(1.35, 1.35));
+}
+
+div#scroll{
+	position: fixed;
+	color: #fff;
+	font: 400 1em 'Poiret One', cursive;
+	left: 90%;
+	top:47%;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.arrows{
+	width: 60px;
+	height: 90px;
+	position: fixed;
+	left: 90%;
+	top:50%;
+	color: #fff;
+}
+
+.arrows path {
+	stroke: #fff;
+	fill: transparent;
+	stroke-width: 1px;	
+	@include prefixer(animation, arrow 2s infinite);
+}
+
+@keyframes arrow
+{
+	0% {opacity:0}
+	40% {opacity:1}
+	80% {opacity:0}
+	100% {opacity:0}
+}
+
+@-webkit-keyframes arrow
+{
+	0% {opacity:0}
+	40% {opacity:1}
+	80% {opacity:0}
+	100% {opacity:0}
+}
+
+.arrows path.a1 {
+	@include prefixer(animation-delay, -1s);
+}
+
+.arrows path.a2 {
+	@include prefixer(animation-delay, -0.5s);
+}
+
+.arrows path.a3 {	
+	@include prefixer(animation-delay, 0s);
+}
+
+
+/*REPSONSIVENESS*/
+
+@media screen and (max-width: 750px){
+
+	div#thebasis-container, svg.hamburger, #footerlinks, div#scroll{
+		display: none !important;
+	}
+
+	div#loading-screen div{
+		font-size: 3.5rem;	
+	}
+
+
+}
+
+
+
+
