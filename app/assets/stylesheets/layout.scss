@@ -47,6 +47,7 @@ svg.hamburger line{
 img.icon{
 	@include transition;
 	width: 100%;
+	display: block;
 	box-sizing: border-box;
 }
 
