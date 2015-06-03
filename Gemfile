@@ -11,6 +11,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails', '~> 4.0.0.beta2'
 gem 'jquery-ui-rails'
 gem 'turbolinks'
+gem 'newrelic_rpm'
 gem 'jbuilder', '~> 2.0'
 gem 'arel', '6.0.0.beta2'
 gem 'sdoc', '~> 0.4.0', group: :doc

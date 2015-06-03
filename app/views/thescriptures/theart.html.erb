@@ -5,7 +5,7 @@
 <section id="music" class="page-load-effect">
 	<% @music.each do |m| %>
 		<span class="music-container" data-song-caption="<%= m['name']%>" >
-			<%= audio_tag m["song"], autoplay: false, controls: false, class: 'song' %>
+			<%= audio_tag m["song"], autoplay: false, controls: false %>
 			<%= image_tag m["image"], class: 'cover-art' %>
 			<%= image_tag 'playbutton.png', class: 'playbutton' %>
 			<%= image_tag 'paused-button.png', class: 'pausebutton' %>
