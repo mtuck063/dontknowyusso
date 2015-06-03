@@ -18,7 +18,7 @@
 
 
 
-$(document).ready(function(){ 
+$(document).on('page:change', function(){ 
   $(".page-load-effect").hide();
   $(".page-load-effect").delay(1000).fadeIn(500);
   $("input#show_location").geocomplete();
@@ -97,7 +97,6 @@ window.onresize = function() {
 function start(){
 
 	$("#doyouknow").delay(1500).fadeOut(500);
-  $(".link-caption").css({'line-height': $("img.icon").height() + "px", 'height': $("img.icon").height() + "px"});
 
 	if($(window).width < 750){
 		$("div#mb").show(1);

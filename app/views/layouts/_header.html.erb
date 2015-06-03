@@ -14,19 +14,19 @@
 	<div class="grid">
 		<%= link_to(root_path, class: 'header-link')  do %>
 			<%= image_tag("landing_page.png", class: 'icon') %>
-			<span class="link-caption">HOME</span>
+			<span class="link-caption" data-menu="HOME"></span>
 		<%end%>
 		<%= link_to(theartist_path, class: 'header-link')  do %>
 			<%= image_tag("yusso_page.png", class: 'icon') %>
-			<span class="link-caption">Y&#217;$$&#211;</span>
+			<span class="link-caption" data-menu="Y&#217;$$&#211;"></span>
 		<%end%>
 		<%= link_to(theart_path, class: 'header-link')  do %>
 			<%= image_tag("music_page.png", class: 'icon') %>
-			<span class="link-caption">MUSIC</span>
+			<span class="link-caption" data-menu="MUSIC"></span>
 		<%end%>
 		<%= link_to(shows_path, class: 'header-link')  do %>
 			<%= image_tag("shows_page.png", class: 'icon') %>
-			<span class="link-caption">SHOWS</span>
+			<span class="link-caption" data-menu="SHOWS"></span>
 		<%end%>
 	</div>
 	

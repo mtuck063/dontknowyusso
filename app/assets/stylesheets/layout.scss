@@ -57,12 +57,19 @@ img.icon{
 	background-color: rgba(0,0,0,0.5);
 	text-align: center;
 	color: #fff;
+	height: 100%;
 	text-transform: uppercase;
 	font-family: 'Source Code Pro', sans-serif;
 	font-weight: 300;
 	font-size: 3rem;
 	z-index: 1005;
 	opacity: 0;
+
+	&:after{
+		content: attr(data-menu);
+		height: 3rem;
+		@include center-vertically;
+	}
 }
 
 a.header-link{
