@@ -1,4 +1,4 @@
-$(document).ready(function(){ 
+$(document).on('page:change', function(){ 
 
 	$("span.music-container").each(function(){
 		var oddClick = true;

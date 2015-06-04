@@ -13,27 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery-ui/effect-slide
 //= require_tree .
 
 
 
-$(document).ready(function(){
+$(document).on('page:change', function(){
 
-	Pace.start();
   $(".page-load-effect").hide();
-  $(".page-load-effect").delay(1000).fadeIn(500);
+  $(".page-load-effect").delay(500).fadeIn(500);
   $("input#show_location").geocomplete();
 	start(); 
 	homePage();
 	scaleVideo();
-
-
-	// $("a.header-link").click(function(){
-	// 	$("a.header-link").fadeOut(300);
-	// 	$("svg.hamburger").delay(300).css({'opacity' : '1', 'z-index' : '101'});
-	// 	$("svg.close-x").css({'opacity' : '0','z-index' : '100' });
-	// });
 
 	setTimeout(function(){
 		$(".bg-zoom-in").addClass("transform");
@@ -56,8 +47,6 @@ $(document).ready(function(){
 	$("a.header-link").mouseleave( function(){
 		$($(this).children()[1]).css({'opacity' : '0'});
 	});
-
-	$("div#header-container").hide();
 
 	$("svg.hamburger").click(function(){
 		$("div#header-container").fadeIn(200);
@@ -89,7 +78,6 @@ $(document).ready(function(){
 
 });
 
-window.onload = function() {}
 
 window.onresize = function() {
 	start(); 
