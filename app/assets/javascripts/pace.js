@@ -1,5 +1,4 @@
 (function() {
-
   var AjaxMonitor, Bar, DocumentMonitor, ElementMonitor, ElementTracker, EventLagMonitor, Evented, Events, NoTargetError, Pace, RequestIntercept, SOURCE_KEYS, Scaler, SocketRequestTracker, XHRRequestTracker, animation, avgAmplitude, bar, cancelAnimation, cancelAnimationFrame, defaultOptions, extend, extendNative, getFromDOM, getIntercept, handlePushState, ignoreStack, init, now, options, requestAnimationFrame, result, runAnimation, scalers, shouldIgnoreURL, shouldTrack, source, sources, uniScaler, _WebSocket, _XDomainRequest, _XMLHttpRequest, _i, _intercept, _len, _pushState, _ref, _ref1, _replaceState,
     __slice = [].slice,
     __hasProp = {}.hasOwnProperty,
@@ -13,8 +12,8 @@
     ghostTime: 100,
     maxProgressPerFrame: 20,
     easeFactor: 1.25,
-    startOnPageLoad: true,
-    restartOnPushState: true,
+    startOnPageLoad: false,
+    restartOnPushState: false,
     restartOnRequestAfter: 500,
     target: 'body',
     elements: {
@@ -263,6 +262,7 @@
       el.className = el.className.replace('pace-active', '');
       el.className += ' pace-inactive';
       document.body.className = document.body.className.replace('pace-running', '');
+      console.log("ran");
       $("#loading-screen").fadeOut(250);
       $(".animsition").delay(250).fadeIn(750);
       return document.body.className += ' pace-done';
@@ -287,7 +287,6 @@
       if (document.querySelector(options.target) == null) {
         return false;
       }
-
       el = this.getElement();
       transform = "translate3d(" + this.progress + "%, 0, 0)";
       _ref2 = ['webkitTransform', 'msTransform', 'transform'];
@@ -315,7 +314,6 @@
     return Bar;
 
   })();
-
 
   Events = (function() {
     function Events() {
@@ -837,7 +835,6 @@
         sources.push(new SOURCE_KEYS[type](options[type]));
       }
     }
-
     _ref4 = (_ref3 = options.extraSources) != null ? _ref3 : [];
     for (_k = 0, _len2 = _ref4.length; _k < _len2; _k++) {
       source = _ref4[_k];
@@ -859,14 +856,8 @@
       }
       animation = null;
     }
-
     return init();
   };
-
-  Pace.percentage = function() {
-    return bar.progress;
-  };
-
 
   Pace.restart = function() {
     Pace.trigger('restart');

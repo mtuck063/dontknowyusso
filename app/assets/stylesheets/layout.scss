@@ -63,7 +63,6 @@ img.icon{
 	font-family: 'Source Code Pro', sans-serif;
 	font-weight: 300;
 	font-size: 3rem;
-	z-index: 1005;
 	opacity: 0;
 
 	&:after{
@@ -77,7 +76,6 @@ a.header-link{
 	@include span-columns(6, 2%);
 	position: relative;
 	display: inline-block;
-	opacity: 0;
 	font-size: 2rem;
 	margin-bottom: 1rem;
 }

@@ -18,7 +18,9 @@
 
 
 
-$(document).on('page:change', function(){ 
+$(document).ready(function(){
+
+	Pace.start();
   $(".page-load-effect").hide();
   $(".page-load-effect").delay(1000).fadeIn(500);
   $("input#show_location").geocomplete();
@@ -27,11 +29,11 @@ $(document).on('page:change', function(){
 	scaleVideo();
 
 
-	$("a.header-link").click(function(){
-		$("a.header-link").fadeOut(300);
-		$("svg.hamburger").delay(300).css({'opacity' : '1', 'z-index' : '101'});
-		$("svg.close-x").css({'opacity' : '0','z-index' : '100' });
-	});
+	// $("a.header-link").click(function(){
+	// 	$("a.header-link").fadeOut(300);
+	// 	$("svg.hamburger").delay(300).css({'opacity' : '1', 'z-index' : '101'});
+	// 	$("svg.close-x").css({'opacity' : '0','z-index' : '100' });
+	// });
 
 	setTimeout(function(){
 		$(".bg-zoom-in").addClass("transform");

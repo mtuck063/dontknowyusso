@@ -18,7 +18,4 @@ class ThescripturesController < ApplicationController
 		]
 	end
 
-	def shows
-	end
-
 end
