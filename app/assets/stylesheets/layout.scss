@@ -2,8 +2,6 @@
 
 /* HEADER */
 
-$window-dimension: 16/9 !global;
-
 div.grid{
 	@include outer-container(70rem);
 	@include center-vertically;

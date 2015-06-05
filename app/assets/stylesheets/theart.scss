@@ -16,15 +16,16 @@ img#music{
 }
 
 section#music{
-  @include outer-container(70rem);
-  padding-top: 5vh;
+  @include outer-container(40rem);
+  height: calc(40rem * (420/640));
+  @include center-vertically;
 }
 
 .music-container{
   @include span-columns(4, 3);
   margin: 1.5%;
   display: inline-block;
-  border: 0.5rem solid #fff;
+  border: 0.5rem solid #f5deb3;
   position: relative;
 
   img.cover-art{
@@ -33,15 +34,15 @@ section#music{
   }
 
   &:after{
+  	display: none;
 		position: absolute;
 		bottom: 2rem;left: 0; right: 0;
 		text-align: center;
-		color: #fff;
+		color: #ee82ee;
 		text-transform: uppercase;
 		font-family: 'Poiret One', cursive;
 		font-size: 2vw;
 		content: attr(data-song-caption);
-		text-shadow: 1px 1px #000;
   }
 
   img.playbutton, img.pausebutton{

@@ -19,7 +19,6 @@
 
 $(document).on('page:change', function(){
 
-  $(".page-load-effect").hide();
   $(".page-load-effect").delay(500).fadeIn(500);
   $("input#show_location").geocomplete();
 	start(); 
@@ -99,28 +98,20 @@ function start(){
 function homePage(){
 
 	// Fade in effect on landing page text
-	$("div#thebasis-container #yussotext, #doyouknow").hide();
-	$("#doyouknow").delay(1500).fadeIn(1000);
+	$("#doyouknow").delay(100).fadeIn(1000);
 	$("#doyouknow").delay(1000).fadeOut(500);
-	$("div#thebasis-container #yussotext").delay(5000).fadeIn(1500);
-
-	// Hide the home page music video 
-	$("#featuredvid, .close").hide();
+	$("div#thebasis-container #yussotext").delay(3500).fadeIn(1000);
 
 	// Fade in the home page music video when clicked
 	$("#watchvid").click(function(){
-		$(".close").css({ 'left' : (($(window).width() - $("#featuredvid").width())/2) });
-		$(".close").css({ 'top' : (($(window).height() - $("#featuredvid").height())/2) });
-		$("#featuredvid").fadeIn(500);
-		$(".close").show();
-		$("#featuredvid").get(0).play();
-		$("#bgvideo").get(0).pause();
+		$("div.video-wrapper").fadeIn(500);
+		$("video#featuredvid").get(0).play();
+		$("video#bgvideo").get(0).pause();
 	});
 
 	// Close the home page music video when close button clicked
 	$(".close").click(function(){
-		$("#featuredvid").hide();
-		$(".close").hide();
+		$("div.video-wrapper").fadeOut(500);
 		$("#featuredvid").get(0).pause();
 		$("#bgvideo").get(0).play();
 	});
