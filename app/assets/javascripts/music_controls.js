@@ -1,6 +1,8 @@
 $(document).on('page:change', function(){ 
 
 	$("li.song").click(function(){
+	
+
 		stopper($(this), function(t){
 			player(t);
 		});
@@ -11,6 +13,10 @@ $(document).on('page:change', function(){
 
 function stopper(t, callback){
 
+	$("li.song").each(function(){
+		$(this).css('color', '#eee');
+	});
+
 	$("audio").each(function(){
 		$(this).get(0).pause();
 	});
@@ -18,6 +24,7 @@ function stopper(t, callback){
 	$("section.music-background").each(function(){
 		$(this).fadeOut(200);
 	});
+
 
 	callback(t);
 };
@@ -31,6 +38,8 @@ function player(_this){
 						 "6.  Better Believe It"];
 
 	arr = arr.reverse();
+	
+	_this.css('color', '#ffd700');
 
 	for (var i = 0; i < arr.length; i++) {
 		if(_this.text() == arr[i]){

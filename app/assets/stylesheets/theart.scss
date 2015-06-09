@@ -18,12 +18,16 @@ section#music-side-panel{
 		padding: 0.5rem 0; 
 
 		li{
-			padding: 0.5rem 1rem;
+			padding: 0.3rem 1rem;
 			color: #eee;
 			font: 400 1.5rem 'Amatic SC', sans-serif;
 			cursor: pointer;
 
 			&:hover{
+				color: #ffd700;
+			}
+
+			&:nth-child(1){
 				color: #ffd700;
 			}
 		}
@@ -44,9 +48,7 @@ section.music-background{
 	background-color: red;
 	background-size: cover;
 
-	&:nth-child(2){
-		opacity: 1;
-	}
+
 
 	div.song-title{
 		color: #eee;
