@@ -1,17 +1,23 @@
-<div class="bg-container">
-	<div id="theart-container-1" class="page-load-effect bg-zoom-in"></div>
-</div>
-		
-<section id="music" class="page-load-effect">
-	<% @music.each do |m| %>
-		<span class="music-container" data-song-caption="<%= m['name']%>" >
-			<%= audio_tag m["song"], autoplay: false, controls: false %>
-			<%= image_tag m["image"], class: 'cover-art' %>
-			<%= image_tag 'playbutton.png', class: 'playbutton' %>
-			<%= image_tag 'paused-button.png', class: 'pausebutton' %>
-		</span>
+<section id="music">
+	<section id="music-side-panel">
+	<%= image_tag "dky.jpg" %>
+		<ul class="playlist">
+		<% @music.each_with_index do |m, i| %>
+			<li class="song"><%= "#{i + 1}. " %> <%= m['name'] %></li>
+		<% end %>
+		</ul>
+	<%= image_tag "back-cover.jpg" %>
+	</section>
+	<% @music.reverse.each_with_index do |m, i| %>
+		<section class="music-background <%= i %>" style="background-image: url( <%= asset_path m['image'] %>);">
+			<div class="song-title"><%= m['name'] %></div>
+			<% if i == 5 %>
+				<%= audio_tag m["song"], autoplay: true, controls: false %>
+			<% else %>
+				<%= audio_tag m["song"], autoplay: false, controls: false %>
+			<% end %>
+		</section>
 	<% end %>
 </section>
-
 
 <%= render 'layouts/footer' %>

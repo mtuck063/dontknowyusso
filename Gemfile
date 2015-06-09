@@ -13,13 +13,14 @@ gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'newrelic_rpm'
 gem 'jbuilder', '~> 2.0'
+gem 'font-awesome-rails', '~> 4.3.0.0'
 gem 'arel', '6.0.0.beta2'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug', '~> 5.0.0'
   gem 'web-console', '~> 2.0.0.beta4'
-  gem 'spring', '~> 1.3.4'
+  gem 'spring', '~> 1.3.6'
 end
 
 gem 'rails_12factor', group: :production

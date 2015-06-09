@@ -1,35 +1,42 @@
 $(document).on('page:change', function(){ 
 
-	$("span.music-container").each(function(){
-		var oddClick = true;
-		var audio = $(this).children()[0];
-		var play  = $(this).children()[2];
-		var pause = $(this).children()[3];
-
-		$(this).mouseenter( function(){
-			if(oddClick){ $(play).fadeIn(200);}
-			else{ $(pause).fadeIn(200); }
+	$("li.song").click(function(){
+		stopper($(this), function(t){
+			player(t);
 		});
-
-		$(this).mouseleave( function(){
-			if(oddClick){ $(play).fadeOut(200);}
-			else{ $(pause).fadeOut(200); }
-		});	
-
-		$(this).click( function(){
-			if(oddClick){ 
-				$(audio).get(0).play();
-				$(pause).fadeIn(200); 
-				$(play).fadeOut(200); 
-			}
-			else{ 
-				$(audio).get(0).pause();
-				$(pause).fadeOut(200); 
-				$(play).fadeIn(200); 
-			}
-			oddClick = !oddClick;
-		});	
 
 	});
 
 });
+
+function stopper(t, callback){
+
+	$("audio").each(function(){
+		$(this).get(0).pause();
+	});
+
+	$("section.music-background").each(function(){
+		$(this).fadeOut(200);
+	});
+
+	callback(t);
+};
+
+function player(_this){
+	var arr = ["1.  Don't Know Yusso",
+						 "2.  Late Nights",
+						 "3.  Flex For The Sake Of Flexing",
+						 "4.  Perception",
+						 "5.  Fire Squad",
+						 "6.  Better Believe It"];
+
+	arr = arr.reverse();
+
+	for (var i = 0; i < arr.length; i++) {
+		if(_this.text() == arr[i]){
+			$("section.music-background." + i).fadeIn(200);
+			$("section.music-background."+ i +" audio").get(0).play();
+		}
+	};		
+
+};

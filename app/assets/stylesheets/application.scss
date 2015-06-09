@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_self
+ *= require font-awesome
  *= require_tree .
  */
 
@@ -41,17 +42,26 @@ a{
 	width: 100vw;
 	overflow: hidden;
 	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+ul{
+  list-style-type: none;
+  margin:0;
+  padding:0;
 }
 
 .bg-zoom-in{
-	-webkit-transition: -webkit-transform 20s; 
+/*	-webkit-transition: -webkit-transform 20s; 
      -moz-transition: -moz-transform  20s;
-       -o-transition: -o-transform  20s;
-          transition: transform 20s;
+       -o-transition: -o-transform  20s;*/
+          transition: height 10s;
 }
 
 .transform{
-	@include prefixer(transform, scale(1.35, 1.35));
+	height: 100vh !important;
+	/*@include prefixer(transform, scale(1, 1));*/
 }
 
 div#scroll{
