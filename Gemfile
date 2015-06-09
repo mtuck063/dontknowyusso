@@ -13,7 +13,6 @@ gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'newrelic_rpm'
 gem 'jbuilder', '~> 2.0'
-gem 'font-awesome-rails', '~> 4.3.0.0'
 gem 'arel', '6.0.0.beta2'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
