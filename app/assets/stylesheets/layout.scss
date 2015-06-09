@@ -3,6 +3,7 @@
 /* HEADER */
 
 div.grid{
+	display: none;
 	@include outer-container(70rem);
 	@include center-vertically;
 	height: calc( ((0.45 * 70rem)/#{$window-dimension} * 2) + 2rem);
@@ -17,7 +18,7 @@ div.grid{
 
 div#header-container{
 	display: none;
-	background-color: #141519;
+	background-color: rgba(20,21,25, 0.95);
 	z-index: 2;
 	position: fixed;
 	height: 100vh;

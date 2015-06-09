@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/effect-drop
 //= require turbolinks
 //= require_tree .
 
@@ -49,6 +50,7 @@ $(document).on('page:change', function(){
 
 	$("svg.hamburger").click(function(){
 		$("div#header-container").fadeIn(200);
+		$("div.grid").delay(250).show('drop', {direction: 'up'}, 500);
 		$("a.header-link").css({'opacity' : '1'});
 		$(this).css({'opacity' : '0','z-index' : '100' });
 		$("svg.close-x").css({'opacity' : '1', 'z-index' : '101'});
@@ -56,6 +58,7 @@ $(document).on('page:change', function(){
 
 	$("svg.close-x").click(function(){
 		$("div#header-container").fadeOut(200);
+		$("div.grid").fadeOut(200);
 		$(this).css({'opacity' : '0', 'z-index' : '100'});
 		$("svg.hamburger").css({'opacity' : '1', 'z-index' : '101'});
 	});
