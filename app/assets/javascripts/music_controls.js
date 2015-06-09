@@ -1,20 +1,26 @@
 $(document).on('page:change', function(){ 
 
-	$("li.song").click(function(){
-	
+	$($("li.song")[0]).addClass("active");
 
-		stopper($(this), function(t){
-			player(t);
+	$("section.music-background.5 audio").on('ended', function(){
+		stopper($($("li.song")[1]), function(_t){
+			player(_t);
+		});
+	});
+
+	$("li.song").click(function(){
+		stopper($(this), function(_this){
+			player(_this);
 		});
 
 	});
 
 });
 
-function stopper(t, callback){
+function stopper(_this, callback){
 
 	$("li.song").each(function(){
-		$(this).css('color', '#eee');
+		$(this).removeClass("active");
 	});
 
 	$("audio").each(function(){
@@ -26,7 +32,7 @@ function stopper(t, callback){
 	});
 
 
-	callback(t);
+	callback(_this);
 };
 
 function player(_this){
@@ -39,12 +45,17 @@ function player(_this){
 
 	arr = arr.reverse();
 	
-	_this.css('color', '#ffd700');
+	_this.addClass("active");
 
 	for (var i = 0; i < arr.length; i++) {
 		if(_this.text() == arr[i]){
 			$("section.music-background." + i).fadeIn(200);
 			$("section.music-background."+ i +" audio").get(0).play();
+			$("section.music-background."+ i +" audio").on('ended', function(){
+				stopper(_this.next(), function(_t){
+					player(_t);
+				});
+			});
 		}
 	};		
 
