@@ -144,3 +144,16 @@ div#footerlinks{
 		color: #fff;
 	}
 }
+
+a.credit{
+	position: absolute;
+	bottom: 0.5vh;
+	right: 2rem;
+	font: 300 0.9rem 'Poiret One', sans-serif;
+	color: #fff;
+	background-color: #222;
+	padding: 0.5rem 1rem 0.7rem;
+	b{
+		color: #789;
+	}
+}
