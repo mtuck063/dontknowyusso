@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/effect-drop
+//= require jquery.countdown
 //= require turbolinks
 //= require_tree .
 
@@ -25,6 +26,8 @@ $(document).on('page:change', function(){
 	start(); 
 	homePage();
 	scaleVideo();
+
+	$("#countdown").countdown({until: new Date(2015, 10-1, 20), format: 'dHMS'});
 
 	setTimeout(function(){
 		$(".bg-zoom-in").addClass("transform");
