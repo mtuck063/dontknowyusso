@@ -1,10 +1,9 @@
 @import "lib";
 
-#countdown{
+.countdown{
 	@include center;
 	font-family: 'Poiret One', cursive;
-	position: absolute;
-	width: 60vw;
+	width: 70vw;
 	height: 15vw;
 	background-color: #222;
 	color: #eee;

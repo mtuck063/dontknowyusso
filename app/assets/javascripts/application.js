@@ -27,7 +27,7 @@ $(document).on('page:change', function(){
 	homePage();
 	scaleVideo();
 
-	$("#countdown").countdown({until: new Date(2015, 10-1, 20), format: 'dHMS'});
+	$(".countdown").countdown({until: new Date(2015, 10-1, 20), format: 'dHMS'});
 
 	setTimeout(function(){
 		$(".bg-zoom-in").addClass("transform");
