@@ -31,7 +31,6 @@ function stopper(_this, callback){
 		$(this).fadeOut(200);
 	});
 
-
 	callback(_this);
 };
 

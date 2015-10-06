@@ -3,9 +3,10 @@
 /* LANDING PAGE */
 
 div#thebasis-container{
+	@include transition(1s);
 	height: 100vh;
 	width: 100vw;
-	background-image: image-url('blueblackguy.jpg');
+	background-image: image-url('bg5.jpg');
 	background-size: cover;
 }
 

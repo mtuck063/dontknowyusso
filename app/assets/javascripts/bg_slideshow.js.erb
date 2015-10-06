@@ -1,0 +1,19 @@
+var bg = ["url(<%= asset_path 'bg0.jpg' %>)",
+  "url(<%= asset_path 'bg1.jpg' %>)",
+  "url(<%= asset_path 'bg2.jpg' %>)",
+  "url(<%= asset_path 'bg3.jpg' %>)",
+  "url(<%= asset_path 'bg4.jpg' %>)",
+  "url(<%= asset_path 'bg5.jpg' %>)"];
+
+$(document).on('page:change', function(){
+  $('#thebasis-container, .mobile-landing-div').css('background-image', bg[0]);  
+  loop_bg(1);
+});
+
+function loop_bg(i){
+  window.setTimeout( (function(){
+	  $('#thebasis-container, .mobile-landing-div').css('background-image', bg[i%6]);  
+	  i+=1;
+	  loop_bg(i);
+  }), 5500);
+}
