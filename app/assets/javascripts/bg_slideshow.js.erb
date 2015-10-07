@@ -10,14 +10,15 @@ var bg = ["url(<%= asset_path 'bg0.jpg' %>)",
   "url(<%= asset_path 'bg9.jpg' %>)"]
 
 $(document).on('page:change', function(){
-  $('#thebasis-container, .mobile-landing-div').css('background-image', bg[0]);  
-  loop_bg(1);
+  var rand = Math.floor(Math.random() * 10);
+  $('#thebasis-container, .mobile-landing-div').css('background-image', bg[rand]);  
+  loop_bg();
 });
 
-function loop_bg(i){
+function loop_bg(){
   window.setTimeout( (function(){
-	  $('#thebasis-container, .mobile-landing-div').css('background-image', bg[i%10]);  
-	  i+=1;
-	  loop_bg(i);
+    var rand = Math.floor(Math.random() * 10);
+	  $('#thebasis-container, .mobile-landing-div').css('background-image', bg[rand]);  
+	  loop_bg();
   }), 4000);
 }
