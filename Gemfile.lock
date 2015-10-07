@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:mtuck063/threejs-rails.git
+  revision: afbba945f74958be76bdc401b55e415f79065d0a
+  specs:
+    threejs-rails (0.0.2)
+      railties (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -179,6 +186,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spring (~> 1.3.6)
   thin
+  threejs-rails!
   turbolinks
   uglifier (>= 1.3.0)
   unicorn-worker-killer

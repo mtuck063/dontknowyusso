@@ -15,6 +15,7 @@
 //= require jquery-ui/effect-drop
 //= require jquery.countdown
 //= require turbolinks
+//= require three
 //= require_tree .
 
 
