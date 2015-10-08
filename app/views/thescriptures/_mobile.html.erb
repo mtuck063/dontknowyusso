@@ -3,7 +3,7 @@
 	<div class="countdown"></div>
 </div>
 
-<!-- <div class="lyrics-container-1">
+<div class="lyrics-container-1">
 	<div class="lyrics" data-signature="- Yusso">
 			Born in the wild.<br>
 			Raised by aliens.<br>
@@ -11,19 +11,17 @@
 	</div>
 </div>
 <div class="mb-shows-container">
-	<div class="inner-mb-shows-container">
-			<div class="shows-title">Upcoming shows</div>
-		  <div id="shows-table">  
-		    <% @shows.each do |show| %>
-			    <div class="shows-row">
-			      <span class="shows-columns title"><%= show.title %></span>
-			      <span class="shows-columns date"><%= show.show_date.strftime("%A, %B %d") %></span>
-			      <span class="shows-columns time"><%= show.show_time.strftime("%l:%M%p") %></span>
-			      <span class="shows-columns location"><%= show.location %></span>
-			    </div>
-		    <% end %>
+	<div class="shows-title">Upcoming shows</div>
+  <div id="shows-table">  
+    <% @shows.each do |show| %>
+	    <div class="shows-row">
+	      <span class="shows-columns title"><%= show.title %></span>
+	      <span class="shows-columns date"><%= show.show_date.strftime("%A, %B %d") %></span>
+	      <span class="shows-columns time"><%= show.show_time.strftime("%l:%M%p") %></span>
+	      <span class="shows-columns location"><%= show.location %></span>
+	    </div>
+    <% end %>
   </div>
-	</div>
 </div>
 <div class="lyrics-container-2">
 		<div class="lyrics" data-signature="- Yusso, Late Nights">
@@ -43,6 +41,6 @@
 	<%= link_to('https://twitter.com/dontknowyusso', target: '_blank')  do %>
 		<%= image_tag("twitter.png") %>
 	<%end%>
-</div> -->
+</div> 
 
 
