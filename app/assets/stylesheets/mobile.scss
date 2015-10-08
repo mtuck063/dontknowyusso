@@ -12,7 +12,7 @@
     height: 100vh;
     width: 100vw;
     background-size: cover;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
 
 /*    background-image: image-url('blurredcity.jpg');
     color: #eee;
@@ -26,7 +26,7 @@
     width: 100vw;
     background-color: #111;
     position: relative;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
     background-size: cover;
   }
 
@@ -39,9 +39,10 @@
   }
 
   div.lyrics{
-    padding: 20vh 0;
+    padding: 20vh 1vw;
     text-align: center;
     color: #ccc;
+    word-wrap: break-word;
     font: 300 2em 'Open Sans', sans-serif;
 
     &::before{	
@@ -64,7 +65,7 @@
     background-color: #141519;
     position: relative;
     /*font-size: 0.5rem;*/
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
     /*background-image: image-url('bio2.jpg');*/
   }
 
