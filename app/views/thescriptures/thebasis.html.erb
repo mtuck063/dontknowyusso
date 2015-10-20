@@ -1,7 +1,7 @@
 <div id="thebasis-container" class="page-load-effect">
 
-<div class="countdown"></div>
-<!-- 
+<!-- <div class="countdown"></div> -->
+
 	<%= video_tag ['nominepatris.mp4','nominepatris.webm','nominepatris.ogv'], 
 						id: 'bgvideo', autoplay: true , loop: true, muted: true %>
 
@@ -16,13 +16,18 @@
 			Watch Video
 		</div>
 	</div>
-
-	<div class="video-wrapper">
+<!-- 
 	<%= video_tag ['makeamove.mp4','makeamove.webm','makeamove.ogv', ], 
 						id: 'featuredvid', autoplay: false , loop: false, muted: false, controls: true %>
 
 	<div class="close">CLOSE</div>
 	</div> -->
+	<div class="video-wrapper">
+	<iframe width="853" height="480" src="https://www.youtube.com/embed/6WTM28EPbb8?rel=0&amp;autoplay=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+		<div class="close">CLOSE</div>
+	</div>
+
   <%= render 'layouts/footer' %>
 
 

@@ -65,12 +65,17 @@ div#watchvid{
 	}
 }
 
-div.video-wrapper{
+.video-wrapper{
 	display: none;
 	@include center;
 	width: 40rem;
 	height: calc( ((40rem)/16) * 9);
 	border: 1px solid #fff;
+
+	iframe{
+		height: inherit;
+		width: inherit;
+	}
 }
 
 video#featuredvid{

@@ -111,15 +111,15 @@ function homePage(){
 
 	// Fade in the home page music video when clicked
 	$("#watchvid").click(function(){
-		$("div.video-wrapper").fadeIn(500);
-		$("video#featuredvid").get(0).play();
+		$(".video-wrapper").fadeIn(500);
+		// $("video#featuredvid").get(0).play();
 		$("video#bgvideo").get(0).pause();
 	});
 
 	// Close the home page music video when close button clicked
 	$(".close").click(function(){
-		$("div.video-wrapper").fadeOut(500);
-		$("#featuredvid").get(0).pause();
+		$(".video-wrapper").fadeOut(500);
+		// $("#featuredvid").get(0).pause();
 		$("#bgvideo").get(0).play();
 	});
 
