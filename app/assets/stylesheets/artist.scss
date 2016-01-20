@@ -1,0 +1,152 @@
+#artist{
+  padding: 100px 0;
+  min-height: 100vh;
+
+  .row{
+    margin: 0 !important;
+  }
+
+  .title{
+    font-size: 3.5vmax;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 30px;
+    color: #444;
+  } 
+
+  .content{
+    padding-top: 30px;
+    width: 80%;
+    line-height: 2;
+    margin: 0 auto;
+    font-weight: 400;
+    text-align: center;
+    color: #888;
+  }
+
+  .col{
+    padding: 0;
+    background-color: #fffaf0;
+    min-height: 200px;
+    height: 50vmin;
+  }
+
+  .col img{
+    width: 100%;
+    min-height: 200px;
+    height: 50vmin;
+    object-fit: cover;
+  }
+}
+
+// @import "lib";
+
+// div#theartist-container-1{
+// 	background-image: image-url('bio1.jpg');
+// 	background-attachment: fixed;
+// 	background-size: cover;
+// 	height: 135vh;
+// 	width: 100vw;
+// 	position: relative;
+// }
+
+
+// div.bio{
+// 	/*background-color: #fff;*/
+// 	color: #eee;
+// 	font: 300 0.8em 'Source Code Pro', sans-serif;
+// 	padding: 10px;
+// 	/*width: 475px;*/
+// 	width: 60vw;
+// 	position: absolute;
+// 	margin: auto 5vw;
+// 	top: 0;left: 0;right: 0;bottom: 0;
+// 	letter-spacing: 2px;
+// 	max-height: 300px;
+// 	line-height: 1.5rem;
+
+// }
+
+// div.bio-title{
+// 	font-weight: 400;
+// 	font-size: 3em;
+// 	padding-bottom: 2rem;
+// }
+
+// div#theartist-container-2{
+// 	background-image: image-url('bio2.jpg');
+// 	background-attachment: fixed;
+// 	background-size: cover;
+// 	height: 100vh;
+// 	width: 100vw;
+// 	top: 100vh;
+// 	position: relative;
+// }
+
+// div.bio-2{
+// 	/*background-color: #fff;*/
+// 	color: #eee;
+// 	/*font: 300 1.1em 'Open Sans', sans-serif;*/
+// 	font: 300 0.8em 'Source Code Pro', sans-serif;
+// 	padding: 10px;
+// 	width: 40vw;
+// 	position: absolute;
+// 	top: 0;left: 0;right: 0;bottom: 0;
+// 	margin: auto 5vw auto auto;
+// 	letter-spacing: 2px;
+// 	height: 200px;
+// }
+
+
+// @media screen and (max-width: 500px){
+
+// 	div.bio, div.bio-2{
+// 		width: 85vw;
+// 		margin: auto;
+// 		overflow: scroll;
+// 		font-size: 0.7rem;
+// 		height: auto;
+// 		position: relative;
+// 	}
+
+// 	.bio-container{
+// 		 display: flex;
+// 	  justify-content: center;
+// 	  align-items: center;
+// 	  height: 100vh;
+// 	}
+
+// 	div#theartist-container-2{
+// 			display: flex !important;
+// 		  justify-content: center;
+// 		  align-items: center;
+// 		  top: 0;
+// 	}
+	
+// }
+
+// /*@media screen and (max-height: 500px){
+
+// 	div.bio, div.bio-2{
+// 		height: 85vh;
+// 		margin: auto;
+// 		overflow: scroll;
+// 		font-size: 0.7rem;
+// 		height: auto;
+// 		position: relative;
+// 	}
+
+// 		.bio-container{
+// 		 display: flex;
+// 		  justify-content: center;
+// 		  align-items: center;
+// 		  height: 100vh;
+// 	}
+
+// 	div#theartist-container-2{
+// 			display: flex !important;
+// 		  justify-content: center;
+// 		  align-items: center;
+// 	}
+	
+// }*/

@@ -1,13 +1,13 @@
 class ThescripturesController < ApplicationController
 
-	def thebasis
+	def basis
     @shows = Show.all.last(5).reverse
 	end
 
-	def theartist
+	def artist
 	end
 
-	def theart
+	def art
 		@music = [
 			{ "name" => "Don't Know Yusso", "song" => "intro.mp3", "image" => "contemplating.jpg" },
 			{ "name" => "Late Nights", "song" => "latenights.mp3", "image" => "looking-down.jpg" },

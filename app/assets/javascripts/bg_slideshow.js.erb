@@ -11,14 +11,15 @@ var bg = ["url(<%= asset_path 'bg0.jpg' %>)",
 
 $(document).on('page:change', function(){
   var rand = Math.floor(Math.random() * 10);
-  $('#thebasis-container, .mobile-landing-div').css('background-image', bg[rand]);  
+  $('#shows-container-1').css('background-image', bg[rand]);  
   loop_bg();
 });
 
 function loop_bg(){
   window.setTimeout( (function(){
+    
     var rand = Math.floor(Math.random() * 10);
-	  $('#thebasis-container, .mobile-landing-div').css('background-image', bg[rand]);  
-	  loop_bg();
-  }), 4000);
+    $('#shows-container-1').css('background-image', bg[rand]);  
+    loop_bg();
+  }), 6000);
 }

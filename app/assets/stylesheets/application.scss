@@ -1,30 +1,25 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_self
- *= require jquery.countdown
- *= require_tree .
- */
-
-/* GLOBAL STYLING */
-
+@import "font-awesome";
+@import "materialize";
 @import "lib";
+@import "layout";
+@import "loading-screen";
+@import "mobile";
+@import "shows";
+@import "art";
+@import "artist";
+@import "basis";
 
 body{
  	margin: 0;
+  font-weight: 300;
  	overflow-x: hidden;
 	background-color: #111;
-	/*background-color: #fffaf0;*/
+  font-family: 'Open Sans', sans-serif;
  }
+
+.container{
+  width: 80%;
+}
 
 a{
 	text-decoration: none;
@@ -38,41 +33,22 @@ a{
 	}
 }
 
-.bg-container{
-	height: 100vh;
-	width: 100vw;
-	overflow: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
+hr.dark{
+  background-image: -webkit-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.4),rgba(0,0,0,0));
+  background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.4),rgba(0,0,0,0));
+  background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.4),rgba(0,0,0,0));
+  background-image: linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.4),rgba(0,0,0,0));
+  margin: 1.5rem auto;
+  border: 0;
+  width: 50%;
+  height: 4px;
 }
+
 
 ul{
   list-style-type: none;
   margin:0;
   padding:0;
-}
-
-.bg-zoom-in{
-/*	-webkit-transition: -webkit-transform 20s; 
-     -moz-transition: -moz-transform  20s;
-       -o-transition: -o-transform  20s;*/
-          transition: height 10s;
-}
-
-.transform{
-	height: 100vh !important;
-	/*@include prefixer(transform, scale(1, 1));*/
-}
-
-div#scroll{
-	position: fixed;
-	color: #fff;
-	font: 400 1em 'Poiret One', cursive;
-	left: 90%;
-	top:47%;
-	letter-spacing: 2px;
-	text-transform: uppercase;
 }
 
 .arrows{
@@ -124,7 +100,7 @@ div#scroll{
 
 @media screen and (max-width: 750px){
 
-	div#thebasis-container, svg.hamburger, #footerlinks, div#scroll{
+	#footerlinks{
 		display: none !important;
 	}
 

@@ -1,0 +1,28 @@
+<section id="basis-container" class="page-load-effect">
+
+	<%= video_tag ['nominepatris.mp4','nominepatris.webm','nominepatris.ogv'], 
+						id: 'bgvideo', autoplay: true , loop: true, muted: true %>
+
+  <div id="inner-container">
+  	<div id="doyouknow">Do you know?</div>
+  	<div id="yussotext">Y&#217;$$&#211;</div>
+
+  	<div id="caption">
+  		Born in the wild.<br>
+  		Raised by aliens.<br>
+  		Sent to school with humans...<br><br>
+  		<div id="watchvid" class="not-mobile-friendly">
+  			Watch Video
+  		</div>
+  	</div>
+
+  	<div class="video-wrapper">
+    	<iframe width="1280" height="720" src="https://www.youtube.com/embed/6WTM28EPbb8?rel=0&amp;autoplay=1&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+  		<div class="close">CLOSE</div>
+  	</div>
+    
+  </div>
+
+  <%= render 'layouts/footer' %>
+
+</section>

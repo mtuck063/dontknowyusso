@@ -2,27 +2,24 @@
 
 /* HEADER */
 
-div.grid{
-	display: none;
-	@include outer-container(70rem);
-	@include center-vertically;
-	height: calc( ((0.45 * 70rem)/#{$window-dimension} * 2) + 2rem);
-}
-
-@media screen and (max-width: 70rem){
-	div.grid{
-		height: calc( ((0.45 * 100vw)/#{$window-dimension} * 2) + 2rem);
-	}
-}
-
-
-div#header-container{
+#header-container{
 	display: none;
 	background-color: rgba(20,21,25, 0.95);
 	z-index: 2;
 	position: fixed;
 	height: 100vh;
 	width: 100vw;
+  overflow-y:scroll;
+
+
+  .row{
+    padding: 10vh 10vw;
+    display: none;
+  }
+
+  .col a img{
+    width: 100%;
+  }
 }
 
 svg.hamburger{
@@ -72,7 +69,7 @@ img.icon{
 }
 
 a.header-link{
-	@include span-columns(6, 2%);
+	// @include span-columns(6, 2%);
 	position: relative;
 	display: inline-block;
 	font-size: 2rem;
@@ -131,9 +128,8 @@ svg.close-x{
 div#footerlinks{
 	width: 100vw;
 	text-align: center;
-	position: fixed;
+	position: absolute;
 	bottom: 0.5vh;
-	font-family: 'Poiret One', sans-serif;
 	font-size: 1em;
 	line-height: normal;
 	overflow: hidden;
@@ -157,3 +153,5 @@ a.credit{
 		color: #789;
 	}
 }
+
+

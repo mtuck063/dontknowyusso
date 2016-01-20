@@ -1,10 +1,21 @@
 @import "lib";
 
 div#shows-container-1{
-	background-image: image-url('show1.jpg');
+  transition: all 500ms ease-in;
+	background-image: image-url('bg5.jpg');
 	background-size: cover;
-	height: 135vh;
+	height: 100vh;
 	position: relative;
+
+  h1{
+    margin: 0;
+    padding: 5rem 0 2rem;
+    text-align: center;
+    font-weight: 400;
+    font-size: 3rem;
+    color: #fffaf0;
+  }
+
 }
 
 div.form{
@@ -16,11 +27,6 @@ div.form{
 
 #shows-table{
 	@include center;
-/*	position: absolute;
-	margin: auto;
-	top: 20vh;
-	width: 70vw;
-	bottom: 0;left: 0; right: 0;*/
 	width: 70vw;
 	color: #eee;
 	font-family: 'Source Code Pro', sans-serif;
@@ -31,9 +37,35 @@ div.form{
 	height: 90px;
 	width: 70vw;
 	overflow: hidden;
+
+  .title{
+    text-transform: uppercase;
+    width: 30%;
+    color: #ffd700;
+    opacity: 0.7;
+  }
+
 	&:last-child{
 		border-bottom: 0px solid #eee;
 	}
+}
+
+.date{
+  width: 20%;
+  opacity: 0;
+  font-weight: 300;
+}
+
+.time{
+  width: 15%;
+  font-weight: 300;
+  opacity: 0;
+}
+
+.location{
+  width: 35%;
+  font-weight: 300;
+  opacity: 0;
 }
 
 .shows-columns{
@@ -44,30 +76,6 @@ div.form{
 	@include prefixer(transition, 350ms linear);
 }
 
-.title{
-	text-transform: uppercase;
-	width: 30%;
-	color: #ffd700;
-	opacity: 0.7;
-}
-
-.date{
-	width: 20%;
-	opacity: 0;
-	font-weight: 300;
-}
-
-.time{
-	width: 15%;
-	font-weight: 300;
-	opacity: 0;
-}
-
-.location{
-	width: 35%;
-	font-weight: 300;
-	opacity: 0;
-}
 
 .show{
 	opacity: 0.8;

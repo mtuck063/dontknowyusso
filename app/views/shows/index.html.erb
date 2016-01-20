@@ -1,21 +1,24 @@
-<div class="bg-container">
-  <div id="shows-container-1" class="page-load-effect bg-zoom-in"></div>
-</div>
+<div id="shows-container-1" class="page-load-effect">
 
-<div id="shows-table" class="page-load-effect" style="height: <%= (@shows.count * 100).to_s << 'px' %>">  
-  <% @shows.each do |show| %>
-  <div class="shows-row">
-    <span class="shows-columns title"><%= show.title %></span>
-    <span class="shows-columns date"><%= show.show_date.strftime("%A, %B %d") %></span>
-    <span class="shows-columns time"><%= show.show_time.strftime("%l:%M%p") %></span>
-    <span class="shows-columns location"><%= show.location %></span>
-    <svg class="line">
-      <line x1="0" y1="0" x2="100%" y2="0" />
-    </svg>
+  <h1>UPCOMING SHOWS</h1>
+  
+  <div id="shows-table" class="page-load-effect" style="height: <%= (@shows.count * 100).to_s << 'px' %>">  
+    <% @shows.each do |show| %>
+    <div class="shows-row">
+      <span class="shows-columns title"><%= show.title %></span>
+      <span class="shows-columns date"><%= show.show_date.strftime("%A, %B %d") %></span>
+      <span class="shows-columns time"><%= show.show_time.strftime("%l:%M%p") %></span>
+      <span class="shows-columns location"><%= show.location %></span>
+      <svg class="line">
+        <line x1="0" y1="0" x2="100%" y2="0" />
+      </svg>
+    </div>
+
+    <% end %>
   </div>
 
-  <% end %>
 </div>
+
 
 
 <%= render 'layouts/footer' %>

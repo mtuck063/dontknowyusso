@@ -11,23 +11,31 @@
 
 <div id="header-container">
 
-	<div class="grid" data-no-turbolink>
-		<%= link_to(root_path, class: 'header-link')  do %>
-			<%= image_tag("land_page.jpg", class: 'icon') %>
-			<span class="link-caption" data-menu="HOME"></span>
-		<%end%>
-		<%= link_to(theartist_path, class: 'header-link')  do %>
-			<%= image_tag("biopage.jpg", class: 'icon') %>
-			<span class="link-caption" data-menu="Y&#217;SS&#211;"></span>
-		<%end%>
-		<%= link_to(theart_path, class: 'header-link')  do %>
-			<%= image_tag("music_page.jpg", class: 'icon') %>
-			<span class="link-caption" data-menu="MUSIC"></span>
-		<%end%>
-		<%= link_to(shows_path, class: 'header-link')  do %>
-			<%= image_tag("showpage.jpg", class: 'icon') %>
-			<span class="link-caption" data-menu="SHOWS"></span>
-		<%end%>
-	</div>
+  <div class="row">
+    <div class="col s12 m12 l6" data-no-turbolink>
+          <%= link_to(root_path, class: 'header-link')  do %>
+        <%= image_tag("land_page.jpg", class: 'icon') %>
+        <span class="link-caption" data-menu="HOME"></span>
+      <%end%>
+    </div>
+    <div class="col s12 m12 l6" data-no-turbolink>
+      <%= link_to(artist_path, class: 'header-link')  do %>
+        <%= image_tag("bio_page.jpg", class: 'icon') %>
+        <span class="link-caption" data-menu="Y&#217;SS&#211;"></span>
+      <%end%>
+    </div>
+    <div class="col s12 m12 l6" data-no-turbolink>
+      <%= link_to(art_path, class: 'header-link')  do %>
+        <%= image_tag("music_page.jpg", class: 'icon') %>
+        <span class="link-caption" data-menu="MUSIC"></span>
+      <%end%>
+    </div>
+    <div class="col s12 m12 l6" data-no-turbolink>
+      <%= link_to(shows_path, class: 'header-link')  do %>
+        <%= image_tag("show_page.jpg", class: 'icon') %>
+        <span class="link-caption" data-menu="SHOWS"></span>
+      <%end%>
+    </div>
+  </div>
 	
 </div>
