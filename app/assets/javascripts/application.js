@@ -13,13 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/effect-drop
-//= require jquery.waypoints
 //= require turbolinks
 //= require_tree .
 
 
 
 $(document).on('page:change', function(){
+
+  $('select').material_select();
 
   $(".page-load-effect").delay(500).fadeIn(1000);
   $("input#show_location").geocomplete();

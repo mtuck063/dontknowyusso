@@ -71,8 +71,6 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
-    jquery-waypoints-rails (2.0.5)
-      rails (>= 3.1.0)
     json (1.8.3)
     kgio (2.9.3)
     loofah (2.0.2)
@@ -182,7 +180,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails (~> 4.0.0.beta2)
   jquery-ui-rails
-  jquery-waypoints-rails (~> 2.0, >= 2.0.5)
   materialize-sass
   newrelic_rpm
   pg
